@@ -71,10 +71,10 @@ Green Card follow-up visit form
         }
     /* .Modal  */
     </style>
-    <script type="text/javascript" src="../moduleResources/kenyaemr/scripts/moment.js"></script>
+    <script type="text/javascript" src="../moduleResources/kpsystem/scripts/moment.js"></script>
     <!--Wizard plugins-->
-    <link rel="stylesheet" href="../moduleResources/kenyaemr/styles/smart_wizard.css" type="text/css" ></link>
-    <script type="text/javascript" src="../moduleResources/kenyaemr/scripts/jquery.smartWizard.js"></script>
+    <link rel="stylesheet" href="../moduleResources/kpsystem/styles/smart_wizard.css" type="text/css" ></link>
+    <script type="text/javascript" src="../moduleResources/kpsystem/scripts/jquery.smartWizard.js"></script>
     <script type="text/javascript">
 //Global variables
         var bmi = null;
@@ -574,12 +574,12 @@ function onEncounterDateChange() {
     if(encDate == null) {
         encDate = new Date();
     }
-    jq.getJSON('/' + OPENMRS_CONTEXT_PATH + '/kenyaemr/emrUtils/durationSinceStartArt.action', { patientId: patientId, now: encDate })
+    jq.getJSON('/' + OPENMRS_CONTEXT_PATH + '/kpsystem/emrUtils/durationSinceStartArt.action', { patientId: patientId, now: encDate })
         .done(function(data) {
             var msg = data.duration ? data.duration : 'Not started';
             jq('#calculated-duration-start-art').html(msg);
         });
-    jq.getJSON('/' + OPENMRS_CONTEXT_PATH + '/kenyaemr/emrUtils/currentArvRegimen.action', { patientId: patientId, now: encDate })
+    jq.getJSON('/' + OPENMRS_CONTEXT_PATH + '/kpsystem/emrUtils/currentArvRegimen.action', { patientId: patientId, now: encDate })
         .done(function(data) {
             var msg = data.duration ? (data.regimen ) : 'None';
             jq('#calculated-duration-current-regimen').html(msg);

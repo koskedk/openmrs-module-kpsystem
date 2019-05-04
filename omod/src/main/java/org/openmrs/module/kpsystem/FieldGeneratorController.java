@@ -32,9 +32,9 @@ public class FieldGeneratorController {
 
 	protected static final Log log = LogFactory.getLog(FieldGeneratorController.class);
 
-	protected final static String VIEW_PATH = "/module/kenyaemr/generateField";
+	protected final static String VIEW_PATH = "/module/kpsystem/generateField";
 
-	@RequestMapping("/kenyaemr/generateField.htm")
+	@RequestMapping("/kpsystem/generateField.htm")
 	public String generateField(@RequestParam(value = "id", required = false) String id,
 								@RequestParam(value = "name", required = true) String name,
 								@RequestParam(value = "conceptId", required = true) Concept concept,

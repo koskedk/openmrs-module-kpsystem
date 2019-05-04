@@ -13,8 +13,8 @@
 -->
 <htmlform>
 
-	<script type="text/javascript" src="../moduleResources/kenyaemr/scripts/moment.js"></script>
-	<!--<script type="text/javascript" src="../moduleResources/kenyaemr/scripts/controllers/facility.js"></script>-->
+	<script type="text/javascript" src="../moduleResources/kpsystem/scripts/moment.js"></script>
+	<!--<script type="text/javascript" src="../moduleResources/kpsystem/scripts/controllers/facility.js"></script>-->
 	<script type="text/javascript">
         /**
          * TODO use a lookup tag to get these concept ids. Will require HTML-463
@@ -356,7 +356,7 @@
                 message: 'This should only be used for new patients. If the patient already has a UPN, please enter that instead.',
                 okLabel: 'Continue',
                 okCallback: function() {
-                    jq.getJSON('/' + ctxPath + '/kenyaemr/emrUtils/nextHivUniquePatientNumber.action', function(data) {
+                    jq.getJSON('/' + ctxPath + '/kpsystem/emrUtils/nextHivUniquePatientNumber.action', function(data) {
                         jq('#hiv-id input[type=text]').val(data.value);
                         jq('#generate-hiv-id').hide();
                     });
@@ -365,7 +365,7 @@
         }
         function onSubmitWithUpnField(upn) {
             var isPresent = "";
-            jq.getJSON('/' + ctxPath +  '/kenyaemr/patient/patientUtils/patientExist.action',{ patientId: upn },function(data) {
+            jq.getJSON('/' + ctxPath +  '/kpsystem/patient/patientUtils/patientExist.action',{ patientId: upn },function(data) {
                 if(data != null){
                     isPresent = data;
                 }

@@ -48,7 +48,7 @@ public class EmrOpenmrsUrlOverrideControllerTest {
 		Assert.assertThat(controller.showOurHomePage(), is("redirect:/login.htm"));
 
 		PowerMockito.when(Context.isAuthenticated()).thenReturn(true);
-		Assert.assertThat(controller.showOurHomePage(), is("forward:/kenyaemr/home.page"));
+		Assert.assertThat(controller.showOurHomePage(), is("forward:/kpsystem/home.page"));
 	}
 
 	/**
@@ -57,7 +57,7 @@ public class EmrOpenmrsUrlOverrideControllerTest {
 	@Test
 	public void showLoginHomepage() {
 		PowerMockito.when(Context.isAuthenticated()).thenReturn(false);
-		Assert.assertThat(controller.showOurLoginPage(), is("forward:/kenyaemr/login.page"));
+		Assert.assertThat(controller.showOurLoginPage(), is("forward:/kpsystem/login.page"));
 
 		PowerMockito.when(Context.isAuthenticated()).thenReturn(true);
 		Assert.assertThat(controller.showOurLoginPage(), is("redirect:/index.htm"));
@@ -69,7 +69,7 @@ public class EmrOpenmrsUrlOverrideControllerTest {
 	@Test
 	public void showOurForgotPasswordPage() {
 		PowerMockito.when(Context.isAuthenticated()).thenReturn(false);
-		Assert.assertThat(controller.showOurForgotPasswordPage(), is("forward:/kenyaemr/forgotPassword.page"));
+		Assert.assertThat(controller.showOurForgotPasswordPage(), is("forward:/kpsystem/forgotPassword.page"));
 
 		PowerMockito.when(Context.isAuthenticated()).thenReturn(true);
 		Assert.assertThat(controller.showOurForgotPasswordPage(), is("redirect:/index.htm"));

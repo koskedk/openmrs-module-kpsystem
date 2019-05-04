@@ -46,13 +46,13 @@ public class EditPatientFormPageControllerTest extends BaseModuleWebContextSensi
 
 		// Check with no previous submission of the obstetric history form
 		String result = controller.controller("test.app", TestUtils.getPatient(7), CommonMetadata._Form.OBSTETRIC_HISTORY, "test.html");
-		Assert.assertThat(result, is("redirect:kenyaemr/enterForm.page?formUuid=8e4e1abf-7c08-4ba8-b6d8-19a9f1ccb6c9&appId=test.app&patientId=7&returnUrl=test.html"));
+		Assert.assertThat(result, is("redirect:kpsystem/enterForm.page?formUuid=8e4e1abf-7c08-4ba8-b6d8-19a9f1ccb6c9&appId=test.app&patientId=7&returnUrl=test.html"));
 
 		// Record submission of obstetric history
 		Encounter encounter = TestUtils.saveEncounter(TestUtils.getPatient(7), obsHistory, TestUtils.date(2012, 4, 30));
 
 		result = controller.controller("test.app", TestUtils.getPatient(7), CommonMetadata._Form.OBSTETRIC_HISTORY, "test.html");
-		String expected = "redirect:kenyaemr/editForm.page?encounterId=" + encounter.getId() + "&appId=test.app&patientId=7&returnUrl=test.html";
+		String expected = "redirect:kpsystem/editForm.page?encounterId=" + encounter.getId() + "&appId=test.app&patientId=7&returnUrl=test.html";
 		Assert.assertThat(result, is(expected));*/
 	}
 }

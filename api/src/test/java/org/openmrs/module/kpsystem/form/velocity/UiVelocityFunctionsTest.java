@@ -54,6 +54,6 @@ public class UiVelocityFunctionsTest extends BaseModuleContextSensitiveTest {
 	public void resourceLink() {
 		WebConstants.CONTEXT_PATH = "testing";
 
-		Assert.assertThat(functions.resourceLink("kpsystem", "test.png"), is("/testing/ms/uiframework/resource/kenyaemr/test.png"));
+		Assert.assertThat(functions.resourceLink("kpsystem", "test.png"), is("/testing/ms/uiframework/resource/kpsystem/test.png"));
 	}
 }

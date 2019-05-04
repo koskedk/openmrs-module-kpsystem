@@ -335,7 +335,7 @@ function onEncounterDateChange()
     }
 
 
-    jq.getJSON('/' + OPENMRS_CONTEXT_PATH + '/kenyaemr/patient/patientUtils/age.action', { patientId: patientId, now: encDate })
+    jq.getJSON('/' + OPENMRS_CONTEXT_PATH + '/kpsystem/patient/patientUtils/age.action', { patientId: patientId, now: encDate })
             .done(function(data) {
                 onPatientAgeUpdate(data.age);
             });
@@ -423,7 +423,7 @@ function onUpnGenerateClick() {
         message: 'This should only be used for new patients. If the patient already has a UPN, please enter that instead.',
         okLabel: 'Continue',
         okCallback: function() {
-            jq.getJSON('/' + ctxPath + '/kenyaemr/emrUtils/nextHivUniquePatientNumber.action', function(data) {
+            jq.getJSON('/' + ctxPath + '/kpsystem/emrUtils/nextHivUniquePatientNumber.action', function(data) {
                 jq('#hiv-id input[type=text]').val(data.value);
                 jq('#generate-hiv-id').hide();
             });

@@ -30,7 +30,7 @@
 			padding: 10px;
 		}
 </style>
-	<script type="text/javascript" src="../moduleResources/kenyaemr/scripts/moment.js"></script>
+	<script type="text/javascript" src="../moduleResources/kpsystem/scripts/moment.js"></script>
 <script type="text/javascript">
         var PATIENT_IS_ENROLLED_HIV = <lookup expression="kenyaemr.hasHivUniquePatientNumber()" />;
         var PATIENT_IS_REPORTED_HIV = "<lookup expression="fn.latestObs(159427).getValueCoded()"/>";
@@ -373,12 +373,12 @@
             if(encDate == null) {
                 encDate = new Date();
             }
-            jq.getJSON('/' + OPENMRS_CONTEXT_PATH + '/kenyaemr/emrUtils/durationSinceStartArt.action', { patientId: patientId, now: encDate })
+            jq.getJSON('/' + OPENMRS_CONTEXT_PATH + '/kpsystem/emrUtils/durationSinceStartArt.action', { patientId: patientId, now: encDate })
                 .done(function(data) {
                     var msg = data.duration ? data.duration : 'Not started';
                     jq('#calculated-duration-start-art').html(msg);
                 });
-            jq.getJSON('/' + OPENMRS_CONTEXT_PATH + '/kenyaemr/emrUtils/currentArvRegimen.action', { patientId: patientId, now: encDate })
+            jq.getJSON('/' + OPENMRS_CONTEXT_PATH + '/kpsystem/emrUtils/currentArvRegimen.action', { patientId: patientId, now: encDate })
                 .done(function(data) {
                     var msg = data.duration ? (data.regimen ) : 'None';
                     jq('#calculated-duration-current-regimen').html(msg);

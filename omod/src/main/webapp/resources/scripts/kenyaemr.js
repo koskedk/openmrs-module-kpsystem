@@ -97,7 +97,7 @@ var kenyaemrApp = angular.module('kenyaemr', [ 'kenyaui' ]);
 	kenyaemr.dynamicObsField = function(parentId, fieldName, conceptId, initialValue, readOnly) {
 		var placeHolderId = kenyaui.generateId();
 		$('#' + parentId).append('<div id="' + placeHolderId + '" class="ke-loading ke-form-dynamic-field">&nbsp;</div>');
-		$.get('/' + OPENMRS_CONTEXT_PATH + '/kenyaemr/generateField.htm', { name: fieldName, conceptId: conceptId, initialValue: initialValue, readOnly : readOnly })
+		$.get('/' + OPENMRS_CONTEXT_PATH + '/kpsystem/generateField.htm', { name: fieldName, conceptId: conceptId, initialValue: initialValue, readOnly : readOnly })
 			.done(function (html) {
 				$('#' + placeHolderId).removeClass('ke-loading');
 				$('#' + placeHolderId).html(html);

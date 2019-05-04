@@ -21,12 +21,12 @@
             if(encDate == null) {
                 encDate = new Date();
             }
-            jq.getJSON('/' + OPENMRS_CONTEXT_PATH + '/kenyaemr/emrUtils/durationSinceStartArt.action', { patientId: patientId, now: encDate })
+            jq.getJSON('/' + OPENMRS_CONTEXT_PATH + '/kpsystem/emrUtils/durationSinceStartArt.action', { patientId: patientId, now: encDate })
                 .done(function(data) {
                     var msg = data.duration ? data.duration : 'Not started';
                     jq('#calculated-duration-start-art').html(msg);
                 });
-            jq.getJSON('/' + OPENMRS_CONTEXT_PATH + '/kenyaemr/emrUtils/currentArvRegimen.action', { patientId: patientId, now: encDate })
+            jq.getJSON('/' + OPENMRS_CONTEXT_PATH + '/kpsystem/emrUtils/currentArvRegimen.action', { patientId: patientId, now: encDate })
                 .done(function(data) {
                     var msg = data.duration ? (data.regimen ) : 'None';
                     jq('#calculated-duration-current-regimen').html(msg);

@@ -108,7 +108,7 @@ function onEncounterDateChange() {
         getField('encounter-date.error').hide();
     }
 
-    jq.getJSON('/' + OPENMRS_CONTEXT_PATH + '/kenyaemr/patient/patientUtils/age.action', { patientId: patientId, now: encDate })
+    jq.getJSON('/' + OPENMRS_CONTEXT_PATH + '/kpsystem/patient/patientUtils/age.action', { patientId: patientId, now: encDate })
             .done(function(data) {
                 onPatientAgeUpdate(data.age);
             });

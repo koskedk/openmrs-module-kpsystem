@@ -118,7 +118,7 @@
         }
 
         function includeMothersNames() {
-            jq.getJSON('/' + OPENMRS_CONTEXT_PATH +  '/kenyaemr/patient/patientUtils/getMothers.action',{ patientId: patientId },function(data) {
+            jq.getJSON('/' + OPENMRS_CONTEXT_PATH +  '/kpsystem/patient/patientUtils/getMothers.action',{ patientId: patientId },function(data) {
                 var motherName;
                 for ( var p in data){
                     motherName = data[p].name;
@@ -127,7 +127,7 @@
             });
         }
         function includeFathersNames() {
-            jq.getJSON('/' + OPENMRS_CONTEXT_PATH +  '/kenyaemr/patient/patientUtils/getFathers.action',{ patientId: patientId },function(data) {
+            jq.getJSON('/' + OPENMRS_CONTEXT_PATH +  '/kpsystem/patient/patientUtils/getFathers.action',{ patientId: patientId },function(data) {
                 var fatherName;
                 for ( var p in data){
                     fatherName = data[p].name;
