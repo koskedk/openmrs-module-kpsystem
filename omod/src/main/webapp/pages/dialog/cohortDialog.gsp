@@ -1,5 +1,5 @@
 <%
-    ui.includeJavascript("kenyaemr", "controllers/report.js")
+    ui.includeJavascript("kpsystem", "controllers/report.js")
 %>
 <script type="text/javascript">
 
@@ -31,8 +31,8 @@
 			<% patients.each { patient -> %>
 			<tr>
 				<td>
-					<img src="${ ui.resourceLink("kenyaui", "images/glyphs/patient_" + patient.gender.toLowerCase() + ".png") }" class="ke-glyph" />
-					<a href="${ ui.pageLink("kenyaemr", "chart/chartViewPatient", [ patientId: patient.id ]) }">${ patient.name }</a>
+					<img src="${ ui.resourceLink("kpui", "images/glyphs/patient_" + patient.gender.toLowerCase() + ".png") }" class="ke-glyph" />
+					<a href="${ ui.pageLink("kpsystem", "chart/chartViewPatient", [ patientId: patient.id ]) }">${ patient.name }</a>
 				</td>
 				<td>${ patient.age }</td>
 				<td>${ patient.gender.toUpperCase() }</td>
@@ -47,6 +47,6 @@
 	</table>
 </div>
 <div class="ke-panel-footer">
-	<button type="button" onclick="kenyaui.closeDialog()"><img src="${ ui.resourceLink("kenyaui", "images/glyphs/close.png") }" /> Close</button>
-	<button type="button" onclick="downloadCohort('${ rq }', '${ ds }', '${ col }')"><img src="${ ui.resourceLink("kenyaui", "images/glyphs/csv.png") }" /> Download</button>
+	<button type="button" onclick="kenyaui.closeDialog()"><img src="${ ui.resourceLink("kpui", "images/glyphs/close.png") }" /> Close</button>
+	<button type="button" onclick="downloadCohort('${ rq }', '${ ds }', '${ col }')"><img src="${ ui.resourceLink("kpui", "images/glyphs/csv.png") }" /> Download</button>
 </div>

@@ -27,8 +27,8 @@
 		<require_module version="${calculationVersion}">org.openmrs.calculation</require_module>
 		<require_module version="${htmlformentryVersion}">org.openmrs.module.htmlformentry</require_module>
 		<require_module version="${idgenVersion}">org.openmrs.module.idgen</require_module>
-		<require_module version="${kenyacoreVersion}">org.openmrs.module.kenyacore</require_module>
-		<require_module version="${kenyauiVersion}">org.openmrs.module.kenyaui</require_module>
+		<require_module version="${kpcoreVersion}">org.openmrs.module.kpcore</require_module>
+		<require_module version="${kpuiVersion}">org.openmrs.module.kpui</require_module>
 		<require_module version="${metadatasharingVersion}">org.openmrs.module.metadatasharing</require_module>
 		<require_module version="${reportingVersion}">org.openmrs.module.reporting</require_module>
 		<require_module version="${groovyVersion}">org.openmrs.module.groovy</require_module>
@@ -40,7 +40,7 @@
 		<aware_of_module version="${kenyaemrOrderentryVersion}">org.openmrs.module.kenyaemrorderentry</aware_of_module>
 	</aware_of_modules>-->
 
-	<activator>org.openmrs.module.kenyaemr.EmrActivator</activator>
+	<activator>org.openmrs.module.kpsystem.EmrActivator</activator>
 
 	<advice>
 		<point>org.openmrs.api.EncounterService</point>

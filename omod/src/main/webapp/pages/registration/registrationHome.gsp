@@ -1,14 +1,14 @@
 <%
-	ui.decorateWith("kenyaemr", "standardPage", [ layout: "sidebar" ])
+	ui.decorateWith("kpsystem", "standardPage", [ layout: "sidebar" ])
 
-	ui.includeJavascript("kenyaemr", "controllers/visit.js")
+	ui.includeJavascript("kpsystem", "controllers/visit.js")
 
 	def menuItems = [
-			[ label: "Find or create client", iconProvider: "kenyaui", icon: "buttons/patient_search.png", href: ui.pageLink("kenyaemr", "registration/registrationSearch") ]
+			[ label: "Find or create client", iconProvider: "kpui", icon: "buttons/patient_search.png", href: ui.pageLink("kpsystem", "registration/registrationSearch") ]
 	]
 
 	def menuItemsNew = [
-			[ label: "Seen Clients", iconProvider: "kenyaui", icon: "buttons/patients.png", href: ui.pageLink("kenyaemr", "registration/registrationSearchSeen") ]
+			[ label: "Seen Clients", iconProvider: "kpui", icon: "buttons/patients.png", href: ui.pageLink("kpsystem", "registration/registrationSearchSeen") ]
 	]
 %>
 
@@ -38,9 +38,9 @@
 </script>
 
 <div class="ke-page-sidebar">
-	${ ui.includeFragment("kenyaui", "widget/panelMenu", [ heading: "Tasks", items: menuItems ]) }
+	${ ui.includeFragment("kpui", "widget/panelMenu", [ heading: "Tasks", items: menuItems ]) }
 
-	${ ui.decorate("kenyaui", "panel", [ heading: "Select Day to View Scheduled Clients" ], """<div id="calendar"></div>""") }
+	${ ui.decorate("kpui", "panel", [ heading: "Select Day to View Scheduled Clients" ], """<div id="calendar"></div>""") }
 
 	<div class="ke-panel-frame" ng-controller="ActiveVisits" ng-init="init()">
 		<div class="ke-panel-heading">Active Visits</div>
@@ -53,12 +53,12 @@
 		</div>
 
 		<div class="ke-panel-controls" ng-show="activeTypes.length > 0">
-			<button type="button" ng-click="closeSelected()"><img src="${ ui.resourceLink("kenyaui", "images/glyphs/checkout.png") }" /> Close Visits</button>
+			<button type="button" ng-click="closeSelected()"><img src="${ ui.resourceLink("kpui", "images/glyphs/checkout.png") }" /> Close Visits</button>
 		</div>
 	</div>
-	${ ui.includeFragment("kenyaui", "widget/panelMenu", [ heading: "", items: menuItemsNew ]) }
+	${ ui.includeFragment("kpui", "widget/panelMenu", [ heading: "", items: menuItemsNew ]) }
 </div>
 
 <div class="ke-page-content">
-	${ ui.includeFragment("kenyaemr", "patient/dailySchedule", [ pageProvider: "kenyaemr", page: "registration/registrationViewPatient", date: scheduleDate ]) }
+	${ ui.includeFragment("kpsystem", "patient/dailySchedule", [ pageProvider: "kpsystem", page: "registration/registrationViewPatient", date: scheduleDate ]) }
 </div>

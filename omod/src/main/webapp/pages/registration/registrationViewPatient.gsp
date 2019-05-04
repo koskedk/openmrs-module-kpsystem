@@ -1,25 +1,25 @@
 <%
-	ui.decorateWith("kenyaemr", "standardPage", [ patient: currentPatient ])
+	ui.decorateWith("kpsystem", "standardPage", [ patient: currentPatient ])
 %>
 
 <div class="ke-page-content">
 	<table cellpadding="0" cellspacing="0" border="0" width="100%">
 		<tr>
 			<td width="30%" valign="top">
-				${ ui.includeFragment("kenyaemr", "patient/patientSummary", [ patient: currentPatient ]) }
-				${ ui.includeFragment("kenyaemr", "program/programHistories", [ patient: currentPatient, showClinicalData: false ]) }
+				${ ui.includeFragment("kpsystem", "patient/patientSummary", [ patient: currentPatient ]) }
+				${ ui.includeFragment("kpsystem", "program/programHistories", [ patient: currentPatient, showClinicalData: false ]) }
 			</td>
 
 			<td width="55%" valign="top" style="padding-left: 5px">
-				${ ui.includeFragment("kenyaemr", "visitMenu", [ patient: currentPatient, visit: activeVisit ]) }
+				${ ui.includeFragment("kpsystem", "visitMenu", [ patient: currentPatient, visit: activeVisit ]) }
 
 				<% if (activeVisit) { %>
-				${ ui.includeFragment("kenyaemr", "visitAvailableForms", [ visit: activeVisit ]) }
-				${ ui.includeFragment("kenyaemr", "visitCompletedForms", [ visit: activeVisit ]) }
+				${ ui.includeFragment("kpsystem", "visitAvailableForms", [ visit: activeVisit ]) }
+				${ ui.includeFragment("kpsystem", "visitCompletedForms", [ visit: activeVisit ]) }
 				<% } %>
 			</td>
 			<td width="15%" valign="top" style="padding-left: 5px">
-				${ ui.includeFragment("kenyaemr", "providerAction/providerActions") }
+				${ ui.includeFragment("kpsystem", "providerAction/providerActions") }
 			</td>
 		</tr>
 	</table>

@@ -83,7 +83,7 @@
 		<div class="ke-field-label">Month</div>
 		<div class="ke-field-content">
 
-			${ ui.includeFragment("kenyaemr", "field/reportPeriod", [ pastMonths: 180, pastYears: 0 ]) }
+			${ ui.includeFragment("kpsystem", "field/reportPeriod", [ pastMonths: 180, pastYears: 0 ]) }
 		</div>
 		<% } %>
 		
@@ -91,21 +91,21 @@
 		<div class="ke-field-label">Year</div>
 		<div class="ke-field-content">
 
-			${ ui.includeFragment("kenyaemr", "field/reportPeriod", [ pastMonths: 0, pastYears: 6 ]) }
+			${ ui.includeFragment("kpsystem", "field/reportPeriod", [ pastMonths: 0, pastYears: 6 ]) }
 		</div>
 		<% } %>
 		<% if (useDateBasedPeriodField) { %>
 		<div class="ke-field-label">Date Range</div>
 		<div class="ke-field-content">
 
-			${ ui.includeFragment("kenyaemr", "field/reportDates") }
+			${ ui.includeFragment("kpsystem", "field/reportDates") }
 		</div>
 		<% } %>
 
 		<% params.each { name, param -> %>
 		<div class="ke-field-label">${ param.label }</div>
 		<div class="ke-field-content">
-			${ ui.includeFragment("kenyaui", "widget/field", [
+			${ ui.includeFragment("kpui", "widget/field", [
 					formFieldName: "param[" + param.name + "]",
 					class: param.type,
 					required: true,
@@ -116,7 +116,7 @@
 	</form>
 </div>
  <div class="ke-panel-footer">
-	<button type="button" id="${ config.id }_btn"><img src="${ ui.resourceLink("kenyaui", "images/glyphs/start.png") }" /> Request</button>
-	<button type="button" onclick="kenyaui.closeDialog();"><img src="${ ui.resourceLink("kenyaui", "images/glyphs/cancel.png") }" /> Cancel</button>
+	<button type="button" id="${ config.id }_btn"><img src="${ ui.resourceLink("kpui", "images/glyphs/start.png") }" /> Request</button>
+	<button type="button" onclick="kenyaui.closeDialog();"><img src="${ ui.resourceLink("kpui", "images/glyphs/cancel.png") }" /> Cancel</button>
 </div>
 <input type="hidden"  id="report-period" name="period-report" value="${ period }"/>

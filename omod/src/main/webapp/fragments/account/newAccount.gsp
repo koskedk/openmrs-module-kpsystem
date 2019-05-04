@@ -1,5 +1,5 @@
 <%
-	ui.decorateWith("kenyaui", "panel", [ heading: "Step 2: Register Account" ])
+	ui.decorateWith("kpui", "panel", [ heading: "Step 2: Register Account" ])
 
 	def nameFields = [
 			[
@@ -58,7 +58,7 @@
 	]
 %>
 
-<form id="create-account-form" method="post" action="${ ui.actionLink("kenyaemr", "account/newAccount", "submit") }">
+<form id="create-account-form" method="post" action="${ ui.actionLink("kpsystem", "account/newAccount", "submit") }">
 	<div class="ke-form-globalerrors" style="display: none"></div>
 
 	<% if (command.original) { %>
@@ -69,7 +69,7 @@
 		<legend>Person Info</legend>
 
 		<% nameFields.each { %>
-		${ ui.includeFragment("kenyaui", "widget/rowOfFields", [ fields: it ]) }
+		${ ui.includeFragment("kpui", "widget/rowOfFields", [ fields: it ]) }
 		<% } %>
 
 		<table>
@@ -87,7 +87,7 @@
 		</table>
 
 		<% contactFields.each { %>
-		${ ui.includeFragment("kenyaui", "widget/rowOfFields", [ fields: it ]) }
+		${ ui.includeFragment("kpui", "widget/rowOfFields", [ fields: it ]) }
 		<% } %>
 
 	</fieldset>
@@ -95,19 +95,19 @@
 	<fieldset>
 		<legend>Login Info</legend>
 		<% userFields.each { %>
-			${ ui.includeFragment("kenyaui", "widget/rowOfFields", [ fields: it ]) }
+			${ ui.includeFragment("kpui", "widget/rowOfFields", [ fields: it ]) }
 		<% } %>
 	</fieldset>
 
 	<fieldset>
 		<legend>Provider Info</legend>
 		<% providerFields.each { %>
-			${ ui.includeFragment("kenyaui", "widget/rowOfFields", [ fields: it ]) }
+			${ ui.includeFragment("kpui", "widget/rowOfFields", [ fields: it ]) }
 		<% } %>
 	</fieldset>
 
 	<div class="ke-form-footer">
-		<button type="submit"><img src="${ ui.resourceLink("kenyaui", "images/glyphs/ok.png") }" /> Create Account</button>
+		<button type="submit"><img src="${ ui.resourceLink("kpui", "images/glyphs/ok.png") }" /> Create Account</button>
 	</div>
 </form>
 
@@ -116,7 +116,7 @@
 		kenyaui.setupAjaxPost('create-account-form', {
 			onSuccess: function(data) {
 				if (data.personId) {
-					ui.navigate('kenyaemr', 'admin/manageAccounts');
+					ui.navigate('kpsystem', 'admin/manageAccounts');
 				} else {
 					kenyaui.notifyError('Creating user was successful, but unexpected response');
 				}

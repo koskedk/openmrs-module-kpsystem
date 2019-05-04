@@ -1,5 +1,5 @@
 <%
-	ui.decorateWith("kenyaui", "panel", [ heading: (command.existing ? "Edit" : "Add") + " Relationship", frameOnly: true ])
+	ui.decorateWith("kpui", "panel", [ heading: (command.existing ? "Edit" : "Add") + " Relationship", frameOnly: true ])
 
 	def rows = [
 		[
@@ -15,7 +15,7 @@
 	]
 %>
 
-<form id="edit-relationship-form" method="post" action="${ ui.actionLink("kenyaemr", "patient/editRelationship", "saveRelationship") }">
+<form id="edit-relationship-form" method="post" action="${ ui.actionLink("kpsystem", "patient/editRelationship", "saveRelationship") }">
 	<% if (command.existing) { %>
 		<input type="hidden" name="existingId" value="${ command.existing.id }"/>
 	<% } %>
@@ -26,13 +26,13 @@
 		<div class="ke-form-globalerrors" style="display: none"></div>
 
 		<% rows.each { %>
-		${ ui.includeFragment("kenyaui", "widget/rowOfFields", [ fields: it ]) }
+		${ ui.includeFragment("kpui", "widget/rowOfFields", [ fields: it ]) }
 		<% } %>
 
 	</div>
 	<div class="ke-panel-footer">
-		<button type="submit"><img src="${ ui.resourceLink("kenyaui", "images/glyphs/ok.png") }" /> Save</button>
-		<button type="button" class="cancel-button"><img src="${ ui.resourceLink("kenyaui", "images/glyphs/cancel.png") }" /> Cancel</button>
+		<button type="submit"><img src="${ ui.resourceLink("kpui", "images/glyphs/ok.png") }" /> Save</button>
+		<button type="button" class="cancel-button"><img src="${ ui.resourceLink("kpui", "images/glyphs/cancel.png") }" /> Cancel</button>
 	</div>
 	
 </form>

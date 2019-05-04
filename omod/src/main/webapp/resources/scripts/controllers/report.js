@@ -33,12 +33,12 @@ kenyaemrApp.controller('ReportController', ['$scope', '$http', '$timeout', funct
 	 * @param oneoff true if method should not request to be called again
 	 */
 	$scope.refresh = function(oneoff) {
-		$http.get(ui.fragmentActionLink('kenyaemr', 'report/reportUtils', 'getQueuedRequests', { reportUuid: $scope.reportUuid })).
+		$http.get(ui.fragmentActionLink('kpsystem', 'report/reportUtils', 'getQueuedRequests', { reportUuid: $scope.reportUuid })).
 			success(function(data) {
 				$scope.queued = data;
 			});
 
-		$http.get(ui.fragmentActionLink('kenyaemr', 'report/reportUtils', 'getFinishedRequests', { reportUuid: $scope.reportUuid })).
+		$http.get(ui.fragmentActionLink('kpsystem', 'report/reportUtils', 'getFinishedRequests', { reportUuid: $scope.reportUuid })).
 			success(function(data) {
 				$scope.finished = data;
 				if (!oneoff) {
@@ -55,7 +55,7 @@ kenyaemrApp.controller('ReportController', ['$scope', '$http', '$timeout', funct
 		var params = { appId: $scope.appId, reportUuid: $scope.reportUuid };
 		angular.extend(params, reportParams); // Add report parameters
 
-		$http.post(ui.fragmentActionLink('kenyaemr', 'report/reportUtils', 'requestReport', params))
+		$http.post(ui.fragmentActionLink('kpsystem', 'report/reportUtils', 'requestReport', params))
 			.success(defaultSuccessHandler)
 			.error(defaultErrorHandler);
 
@@ -70,7 +70,7 @@ kenyaemrApp.controller('ReportController', ['$scope', '$http', '$timeout', funct
 			heading: "Report",
 			message: "Cancel this report request?",
 			okCallback: function() {
-				$http.post(ui.fragmentActionLink('kenyaemr', 'report/reportUtils', 'cancelRequest', { requestId: requestId }))
+				$http.post(ui.fragmentActionLink('kpsystem', 'report/reportUtils', 'cancelRequest', { requestId: requestId }))
 					.success(defaultSuccessHandler)
 					.error(defaultErrorHandler);
 			}
@@ -99,7 +99,7 @@ kenyaemrApp.controller('ReportController', ['$scope', '$http', '$timeout', funct
 	 * @param requestId the request id
 	 */
 	$scope.viewReportError = function(requestId) {
-		var contentUrl = ui.pageLink('kenyaemr', 'dialog/reportErrorDialog', { appId: $scope.appId, request: requestId });
+		var contentUrl = ui.pageLink('kpsystem', 'dialog/reportErrorDialog', { appId: $scope.appId, request: requestId });
 		kenyaui.openDynamicDialog({ heading: 'View Error', url: contentUrl, width: 90, height: 90 });
 	};
 

@@ -1,5 +1,5 @@
 <%
-	ui.decorateWith("kenyaui", "panel", [ heading: definition.name ])
+	ui.decorateWith("kpui", "panel", [ heading: definition.name ])
 
 	def columns = dataSet.metaData.columns
 	def nonIdOrNameColumns = columns.findAll { it.label != "id" && it.label != "Name" }
@@ -11,9 +11,9 @@
 	<legend>Summary</legend>
 	<table>
 		<tr>
-			<td style="padding-right: 20px">${ ui.includeFragment("kenyaui", "widget/dataPoint", [ label: "Total", value: summary["total"] ]) }</td>
-			<td style="padding-right: 20px">${ ui.includeFragment("kenyaui", "widget/dataPoint", [ label: "Males", value: summary["males"] ]) }</td>
-			<td>${ ui.includeFragment("kenyaui", "widget/dataPoint", [ label: "Females", value: summary["females"] ]) }</td>
+			<td style="padding-right: 20px">${ ui.includeFragment("kpui", "widget/dataPoint", [ label: "Total", value: summary["total"] ]) }</td>
+			<td style="padding-right: 20px">${ ui.includeFragment("kpui", "widget/dataPoint", [ label: "Males", value: summary["males"] ]) }</td>
+			<td>${ ui.includeFragment("kpui", "widget/dataPoint", [ label: "Females", value: summary["females"] ]) }</td>
 		</tr>
 	</table>
 </fieldset>
@@ -38,8 +38,8 @@
 		%>
 			<tr>
 				<td>
-					<img src="${ ui.resourceLink("kenyaui", "images/glyphs/patient_" + personGender + ".png") }" class="ke-glyph" />
-					<a href="${ ui.pageLink("kenyaemr", "chart/chartViewPatient", [ patientId: patientId ]) }">${ personName }</a>
+					<img src="${ ui.resourceLink("kpui", "images/glyphs/patient_" + personGender + ".png") }" class="ke-glyph" />
+					<a href="${ ui.pageLink("kpsystem", "chart/chartViewPatient", [ patientId: patientId ]) }">${ personName }</a>
 				</td>
 
 			<% nonIdOrNameColumns.each { col -> %>

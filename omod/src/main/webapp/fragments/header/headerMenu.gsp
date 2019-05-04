@@ -4,20 +4,20 @@
 
 	if (context.authenticatedUser) {
 
-		appMenuItems << """<a href="/${ contextPath }/kenyaemr/userHome.page?${ config.context ? config.context : "" }"><img src="${ ui.resourceLink("kenyaui", "images/toolbar/home.png") }" width="12" height="12" />&nbsp;&nbsp;Home</a>"""
+		appMenuItems << """<a href="/${ contextPath }/kenyaemr/userHome.page?${ config.context ? config.context : "" }"><img src="${ ui.resourceLink("kpui", "images/toolbar/home.png") }" width="12" height="12" />&nbsp;&nbsp;Home</a>"""
 
 		if (currentApp) {
 			appMenuItems << """<a href="/${ contextPath }/${ currentApp.url }">${ currentApp.label }</a>"""
 		}
 
 		userMenuItems << """<span>Logged in as <i>${ context.authenticatedUser.personName }</i></span>"""
-		userMenuItems << """<a href="${ ui.pageLink("kenyaemr", "profile") }">My Profile</a>"""
+		userMenuItems << """<a href="${ ui.pageLink("kpsystem", "profile") }">My Profile</a>"""
 		userMenuItems << """<a href="javascript:ke_logout()">Log Out</a>"""
 	} else {
 		userMenuItems << "<span><em>Not Logged In</em></span>"
 	}
 
-	userMenuItems << """<a href="javascript:ke_showHelp()"><img src="${ ui.resourceLink("kenyaui", "images/toolbar/help.png") }" width="12" height="12" />&nbsp;&nbsp;Help</a>"""
+	userMenuItems << """<a href="javascript:ke_showHelp()"><img src="${ ui.resourceLink("kpui", "images/toolbar/help.png") }" width="12" height="12" />&nbsp;&nbsp;Help</a>"""
 %>
 
 <div class="ke-toolbar" style="background-color: #0071BC;">

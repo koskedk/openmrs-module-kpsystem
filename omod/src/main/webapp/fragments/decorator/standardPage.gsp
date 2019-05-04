@@ -1,30 +1,30 @@
 <%
-	ui.includeCss("kenyaemr", "kenyaemr.css", 50)
-	ui.includeJavascript("kenyaemr", "kenyaemr.js", 50)
+	ui.includeCss("kpsystem", "kenyaemr.css", 50)
+	ui.includeJavascript("kpsystem", "kenyaemr.js", 50)
 
 	if (config.patient) {
 		config.context = "patientId=${ config.patient.id }"
 	}
 
-	config.beforeContent = ui.includeFragment("kenyaemr", "header/pageHeader", config)
+	config.beforeContent = ui.includeFragment("kpsystem", "header/pageHeader", config)
 
-	config.beforeContent += ui.includeFragment("kenyaemr", "header/systemHeader", config)
+	config.beforeContent += ui.includeFragment("kpsystem", "header/systemHeader", config)
 
-	config.beforeContent += ui.includeFragment("kenyaemr", "header/headerMenu", config)
+	config.beforeContent += ui.includeFragment("kpsystem", "header/headerMenu", config)
 
 	if (config.patient) {
-		config.beforeContent += ui.includeFragment("kenyaemr", "header/patientHeader", [ patient: config.patient, closeChartUrl: config.closeChartUrl ])
+		config.beforeContent += ui.includeFragment("kpsystem", "header/patientHeader", [ patient: config.patient, closeChartUrl: config.closeChartUrl ])
 	}
 	if (config.visit) {
-		config.beforeContent += ui.includeFragment("kenyaemr", "header/visitHeader", [ visit: config.visit ])
+		config.beforeContent += ui.includeFragment("kpsystem", "header/visitHeader", [ visit: config.visit ])
 	}
 
 	config.pageTitle = "KPS"
-	config.faviconIco = ui.resourceLink("kenyaemr", "images/logos/favicon.ico")
-	config.faviconPng = ui.resourceLink("kenyaemr", "images/keypop.png")
+	config.faviconIco = ui.resourceLink("kpsystem", "images/logos/favicon.ico")
+	config.faviconPng = ui.resourceLink("kpsystem", "images/keypop.png")
 	config.angularApp = "kenyaemr"
 	
-	ui.decorateWith("kenyaui", "standardPage", config)
+	ui.decorateWith("kpui", "standardPage", config)
 %>
 
 <!-- Override content layout from kenyaui based on the layout config value -->
@@ -33,7 +33,7 @@
 
 <% if (config.layout == "sidebar") { %>
 	html {
-		background: #FFF url('${ ui.resourceLink("kenyaui", "images/background.png") }') repeat-y;
+		background: #FFF url('${ ui.resourceLink("kpui", "images/background.png") }') repeat-y;
 	}
 <% } %>
 
@@ -63,6 +63,6 @@
 		</table>
 	</div>
 	<div class="ke-panel-controls">
-		<button type="button"><img src="${ ui.resourceLink("kenyaui", "images/glyphs/login.png") }" /> Login</button>
+		<button type="button"><img src="${ ui.resourceLink("kpui", "images/glyphs/login.png") }" /> Login</button>
 	</div>
 </div>

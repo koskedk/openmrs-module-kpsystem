@@ -26,7 +26,7 @@ table.moh257 > tbody > tr > td, table.moh257 > tbody > tr > th {
 
 </div>
 <div align="center">
-    <button id="print"><img src="${ ui.resourceLink("kenyaui", "images/buttons/summary.png") }" /> Print summaries</button>
+    <button id="print"><img src="${ ui.resourceLink("kpui", "images/buttons/summary.png") }" /> Print summaries</button>
 </div>
 <script type="text/javascript">
     jQuery(function(){

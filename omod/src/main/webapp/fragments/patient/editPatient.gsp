@@ -1,5 +1,5 @@
 <%
-    ui.decorateWith("kenyaui", "panel", [heading: (config.heading ?: "Edit Patient"), frameOnly: true])
+    ui.decorateWith("kpui", "panel", [heading: (config.heading ?: "Edit Patient"), frameOnly: true])
     def countyName = command.personAddress.country == null ? false : command.personAddress.country.toLowerCase()
 
     def nameFields = [
@@ -60,7 +60,7 @@
     ]
 %>
 
-<form id="edit-patient-form" method="post" action="${ui.actionLink("kenyaemr", "patient/editPatient", "savePatient")}">
+<form id="edit-patient-form" method="post" action="${ui.actionLink("kpsystem", "patient/editPatient", "savePatient")}">
     <% if (command.original) { %>
     <input type="hidden" name="personId" value="${command.original.id}"/>
     <% } %>
@@ -81,20 +81,20 @@
                 <tr>
                     <td class="ke-field-label">Unique Patient Number</td>
                     <td>${
-                            ui.includeFragment("kenyaui", "widget/field", [object: command, property: "uniquePatientNumber"])}</td>
+                            ui.includeFragment("kpui", "widget/field", [object: command, property: "uniquePatientNumber"])}</td>
                     <td class="ke-field-instructions">(KP program<% if (!command.uniquePatientNumber) { %>, if assigned<%
                             } %>)</td>
                 </tr>
                 <% } %>
                 <tr>
                     <td class="ke-field-label">Patient Clinic Number</td>
-                    <td>${ui.includeFragment("kenyaui", "widget/field", [object: command, property: "patientClinicNumber"])}</td>
+                    <td>${ui.includeFragment("kpui", "widget/field", [object: command, property: "patientClinicNumber"])}</td>
                     <td class="ke-field-instructions"><% if (!command.patientClinicNumber) { %>(if available)<%
                         } %></td>
                 </tr>
                 <tr>
                     <td class="ke-field-label">National ID Number</td>
-                    <td>${ui.includeFragment("kenyaui", "widget/field", [object: command, property: "nationalIdNumber"])}</td>
+                    <td>${ui.includeFragment("kpui", "widget/field", [object: command, property: "nationalIdNumber"])}</td>
                     <td class="ke-field-instructions"><% if (!command.nationalIdNumber) { %>(If the patient is below 18 years of age, enter the guardian`s National Identification Number if available.)<% } %></td>
                 </tr>
             </table>
@@ -105,7 +105,7 @@
             <legend>Demographics</legend>
 
             <% nameFields.each { %>
-            ${ui.includeFragment("kenyaui", "widget/rowOfFields", [fields: it])}
+            ${ui.includeFragment("kpui", "widget/rowOfFields", [fields: it])}
             <% } %>
 
             <table>
@@ -125,7 +125,7 @@
                     <td valign="top">
                         <label class="ke-field-label">Date of Birth *</label>
                         <span class="ke-field-content">
-                            ${ui.includeFragment("kenyaui", "widget/field", [id: "patient-birthdate", object: command, property: "birthdate"])}
+                            ${ui.includeFragment("kpui", "widget/field", [id: "patient-birthdate", object: command, property: "birthdate"])}
                             <span id="patient-birthdate-estimated">
                                 <input type="radio" name="birthdateEstimated"
                                        value="true" ${command.birthdateEstimated ? 'checked="checked"' : ''}/> Estimated
@@ -141,10 +141,10 @@
             </table>
 
             <% otherDemogFieldRows.each { %>
-            ${ui.includeFragment("kenyaui", "widget/rowOfFields", [fields: it])}
+            ${ui.includeFragment("kpui", "widget/rowOfFields", [fields: it])}
             <% } %>
             <% deathFieldRows.each { %>
-            ${ui.includeFragment("kenyaui", "widget/rowOfFields", [fields: it])}
+            ${ui.includeFragment("kpui", "widget/rowOfFields", [fields: it])}
             <% } %>
 
         </fieldset>
@@ -155,7 +155,7 @@
             <legend>Address</legend>
 
             <% contactsFields.each { %>
-            ${ui.includeFragment("kenyaui", "widget/rowOfFields", [fields: it])}
+            ${ui.includeFragment("kpui", "widget/rowOfFields", [fields: it])}
             <% } %>
 
             <table>
@@ -174,16 +174,16 @@
                             <%}%>
                         </select>
                     </td>
-                    <td style="width: 260px">${ui.includeFragment("kenyaui", "widget/field", [object: command, property: "personAddress.stateProvince"])}</td>
-                    <td style="width: 260px">${ui.includeFragment("kenyaui", "widget/field", [object: command, property: "personAddress.address4"])}</td>
+                    <td style="width: 260px">${ui.includeFragment("kpui", "widget/field", [object: command, property: "personAddress.stateProvince"])}</td>
+                    <td style="width: 260px">${ui.includeFragment("kpui", "widget/field", [object: command, property: "personAddress.address4"])}</td>
                 </tr>
             </table>
             <% locationSubLocationVillageFields.each { %>
-            ${ui.includeFragment("kenyaui", "widget/rowOfFields", [fields: it])}
+            ${ui.includeFragment("kpui", "widget/rowOfFields", [fields: it])}
             <% } %>
 
             <% landmarkNearestFacilityFields.each { %>
-            ${ui.includeFragment("kenyaui", "widget/rowOfFields", [fields: it])}
+            ${ui.includeFragment("kpui", "widget/rowOfFields", [fields: it])}
             <% } %>
         </fieldset>
 
@@ -196,7 +196,7 @@
                 </tr>
 
                 <tr>
-                    <td style="width: 260px">${ui.includeFragment("kenyaui", "widget/field", [object: command, property: "nameOfNextOfKin"])}</td>
+                    <td style="width: 260px">${ui.includeFragment("kpui", "widget/field", [object: command, property: "nameOfNextOfKin"])}</td>
                     <td style="width: 260px">
                         <select name="nextOfKinRelationship">
                             <option></option>
@@ -208,7 +208,7 @@
                 </tr>
             </table>
             <% nextOfKinFieldRows.each { %>
-            ${ui.includeFragment("kenyaui", "widget/rowOfFields", [fields: it])}
+            ${ui.includeFragment("kpui", "widget/rowOfFields", [fields: it])}
             <% } %>
 
         </fieldset>
@@ -217,19 +217,19 @@
 
     <div class="ke-panel-footer">
         <button type="submit">
-            <img src="${ui.resourceLink("kenyaui", "images/glyphs/ok.png")}"/> ${command.original ? "Save Changes" : "Create Client"}
+            <img src="${ui.resourceLink("kpui", "images/glyphs/ok.png")}"/> ${command.original ? "Save Changes" : "Create Client"}
         </button>
         <% if (config.returnUrl) { %>
         <button type="button" class="cancel-button"><img
-                src="${ui.resourceLink("kenyaui", "images/glyphs/cancel.png")}"/> Cancel</button>
+                src="${ui.resourceLink("kpui", "images/glyphs/cancel.png")}"/> Cancel</button>
         <% } %>
     </div>
 
 </form>
 
 <!-- You can't nest forms in HTML, so keep the dialog box form down here -->
-${ui.includeFragment("kenyaui", "widget/dialogForm", [
-        buttonConfig     : [id: "from-age-button", label: "from age", iconProvider: "kenyaui", icon: "glyphs/calculate.png"],
+${ui.includeFragment("kpui", "widget/dialogForm", [
+        buttonConfig     : [id: "from-age-button", label: "from age", iconProvider: "kpui", icon: "glyphs/calculate.png"],
         dialogConfig     : [heading: "Calculate Birthdate", width: 40, height: 40],
         fields           : [
                 [label: "Age in years", formFieldName: "age", class: java.lang.Integer],
@@ -238,7 +238,7 @@ ${ui.includeFragment("kenyaui", "widget/dialogForm", [
                         class: java.util.Date, initialValue: new java.text.SimpleDateFormat("yyyy-MM-dd").parse((new Date().getYear() + 1900) + "-06-15")
                 ]
         ],
-        fragmentProvider : "kenyaemr",
+        fragmentProvider : "kpsystem",
         fragment         : "emrUtils",
         action           : "birthdateFromAge",
         onSuccessCallback: "updateBirthdate(data);",

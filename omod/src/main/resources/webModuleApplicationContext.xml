@@ -19,16 +19,16 @@
 	<!-- UI Framework setup -->
 	
 	<bean class="org.openmrs.ui.framework.StandardModuleUiConfiguration">
-		<property name="moduleId" value="kenyaemr"/>
+		<property name="moduleId" value="kpsystem"/>
 	</bean>
 
 	<mvc:interceptors>
-		<bean class="org.openmrs.module.kenyaemr.EmrExternalUrlInterceptor" />
+		<bean class="org.openmrs.module.kpsystem.EmrExternalUrlInterceptor" />
 	</mvc:interceptors>
 
 	<bean id="standardPageDecorator" class="org.openmrs.ui.framework.extension.MapResourceExtension">
 		<property name="point" value="org.openmrs.ui.framework.mapResource" />
-		<property name="providerId" value="kenyaemr" />
+		<property name="providerId" value="kpsystem" />
 		<property name="resourceId" value="standardPage" />
 		<property name="providerIdToMap" value="appui" />
 		<property name="resourceIdToMap" value="standardEmrPage" />

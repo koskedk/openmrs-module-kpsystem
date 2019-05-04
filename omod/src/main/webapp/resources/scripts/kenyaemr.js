@@ -3,19 +3,19 @@
  */
 
 kenyaui.configureSearch('concept', {
-	searchProvider: 'kenyaemr',
+	searchProvider: 'kpsystem',
 	searchFragment: 'search',
 	format: function(concept) { return concept.name; }
 });
 
 kenyaui.configureSearch('location', {
-	searchProvider: 'kenyaemr',
+	searchProvider: 'kpsystem',
 	searchFragment: 'search',
 	format: function(location) { return location.name + ' <span style="color: #999">' + location.code + '</span>'; }
 });
 
 kenyaui.configureSearch('person', {
-	searchProvider: 'kenyaemr',
+	searchProvider: 'kpsystem',
 	searchFragment: 'search',
 	format: function(person) {
 		var icon = ui.resourceLink('kenyaui', 'images/glyphs/' + ((person.isPatient ? 'patient' : 'person') + '_' + person.gender) + '.png');
@@ -28,7 +28,7 @@ kenyaui.configureSearch('person', {
 });
 
 kenyaui.configureSearch('patient', {
-	searchProvider: 'kenyaemr',
+	searchProvider: 'kpsystem',
 	searchFragment: 'search',
 	format: function(patient) {
 		var icon = ui.resourceLink('kenyaui', 'images/glyphs/patient_' + patient.gender + '.png');
@@ -41,7 +41,7 @@ kenyaui.configureSearch('patient', {
 });
 
 kenyaui.configureSearch('provider', {
-	searchProvider: 'kenyaemr',
+	searchProvider: 'kpsystem',
 	searchFragment: 'search',
 	format: function(provider) { return provider.person.name; }
 });
@@ -61,7 +61,7 @@ var kenyaemrApp = angular.module('kenyaemr', [ 'kenyaui' ]);
 	 * @param encounterId the encounter id
 	 */
 	kenyaemr.openEncounterDialog = function(appId, encounterId) {
-		var contentUrl = ui.pageLink('kenyaemr', 'dialog/formDialog', { appId: appId, encounterId: encounterId, currentUrl: location.href });
+		var contentUrl = ui.pageLink('kpsystem', 'dialog/formDialog', { appId: appId, encounterId: encounterId, currentUrl: location.href });
 		kenyaui.openDynamicDialog({ heading: 'View Form', url: contentUrl, width: 90, height: 90, scrolling: true });
 	};
 
@@ -109,7 +109,7 @@ var kenyaemrApp = angular.module('kenyaemr', [ 'kenyaui' ]);
 	 * @param callback the callback to invoke
 	 */
 	kenyaemr.ensureUserAuthenticated = function(callback) {
-		$.getJSON(ui.fragmentActionLink('kenyaemr', 'emrUtils', 'isAuthenticated'), function(result) {
+		$.getJSON(ui.fragmentActionLink('kpsystem', 'emrUtils', 'isAuthenticated'), function(result) {
 			if (result.authenticated) {
 				callback();
 			}
@@ -128,7 +128,7 @@ var kenyaemrApp = angular.module('kenyaemr', [ 'kenyaui' ]);
 					var password = $('#authdialog-password').val();
 
 					// Try authenticating and then submitting again...
-					$.getJSON(ui.fragmentActionLink('kenyaemr', 'emrUtils', 'authenticate', { username: username, password: password }), function(result) {
+					$.getJSON(ui.fragmentActionLink('kpsystem', 'emrUtils', 'authenticate', { username: username, password: password }), function(result) {
 						if (result.authenticated) {
 							kenyaui.closeDialog();
 							callback();

@@ -1,26 +1,26 @@
 <%
-	ui.decorateWith("kenyaemr", "standardPage", [ patient: currentPatient, layout: "sidebar" ])
+	ui.decorateWith("kpsystem", "standardPage", [ patient: currentPatient, layout: "sidebar" ])
 
 	def menuItems = [
 			[
 					label: "Overview",
-					href: ui.pageLink("kenyaemr", "chart/chartViewPatient", [ patientId: currentPatient.id, section: "overview" ]),
+					href: ui.pageLink("kpsystem", "chart/chartViewPatient", [ patientId: currentPatient.id, section: "overview" ]),
 					active: (selection == "section-overview"),
-					iconProvider: "kenyaui",
+					iconProvider: "kpui",
 					icon: "buttons/patient_overview.png"
 			],
 			[
 					label: "Record Previous Visit",
-					href: ui.pageLink("kenyaemr", "chart/chartViewPatient", [ patientId: currentPatient.id, section: "moh257" ]),
+					href: ui.pageLink("kpsystem", "chart/chartViewPatient", [ patientId: currentPatient.id, section: "moh257" ]),
 					active: (selection == "section-moh257"),
-					iconProvider: "kenyaui",
+					iconProvider: "kpui",
 					icon: "forms/moh257.png"
 			],
 			[
 					label: "Patient summary",
-					href: ui.pageLink("kenyaemr", "chart/chartViewPatient", [ patientId: currentPatient.id, section: "summaries" ]),
+					href: ui.pageLink("kpsystem", "chart/chartViewPatient", [ patientId: currentPatient.id, section: "summaries" ]),
 					active: (selection == "section-summaries"),
-					iconProvider: "kenyaui",
+					iconProvider: "kpui",
 					icon: "buttons/summary.png"
 			]
 
@@ -29,7 +29,7 @@
 	oneTimeForms.each { form ->
 		menuItems << [
 				label: form.name,
-				href: ui.pageLink("kenyaemr", "chart/chartViewPatient", [ patientId: currentPatient.id, formUuid: form.formUuid ]),
+				href: ui.pageLink("kpsystem", "chart/chartViewPatient", [ patientId: currentPatient.id, formUuid: form.formUuid ]),
 				active: (selection == "form-" + form.formUuid),
 				iconProvider: form.iconProvider,
 				icon: form.icon,
@@ -40,7 +40,7 @@
 		menuItems << [
 				label: ui.format(program.target),
 				extra: programSummaries[program.target],
-				href: ui.pageLink("kenyaemr", "chart/chartViewPatient", [ patientId: currentPatient.id, programId: program.target.id ]),
+				href: ui.pageLink("kpsystem", "chart/chartViewPatient", [ patientId: currentPatient.id, programId: program.target.id ]),
 				active: (selection == "program-" + program.target.id)
 		]
 	}
@@ -48,22 +48,22 @@
 <div class="ke-page-sidebar">
 
 	<div class="ke-panel-frame">
-		<% menuItems.each { item -> print ui.includeFragment("kenyaui", "widget/panelMenuItem", item) } %>
+		<% menuItems.each { item -> print ui.includeFragment("kpui", "widget/panelMenuItem", item) } %>
 	</div>
 
 	<div class="ke-panel-frame">
 		<div class="ke-panel-heading">Visits(${ visitsCount })</div>
 
 		<% if (!visits) {
-			print ui.includeFragment("kenyaui", "widget/panelMenuItem", [
+			print ui.includeFragment("kpui", "widget/panelMenuItem", [
 					label: ui.message("general.none"),
 			])
 		}
 		else {
 			visits.each { visit ->
-				print ui.includeFragment("kenyaui", "widget/panelMenuItem", [
+				print ui.includeFragment("kpui", "widget/panelMenuItem", [
 						label: ui.format(visit.visitType),
-						href: ui.pageLink("kenyaemr", "chart/chartViewPatient", [ patientId: currentPatient.id, visitId: visit.id ]),
+						href: ui.pageLink("kpsystem", "chart/chartViewPatient", [ patientId: currentPatient.id, visitId: visit.id ]),
 						extra: kenyaui.formatVisitDates(visit),
 						active: (selection == "visit-" + visit.id)
 				])
@@ -77,10 +77,10 @@
 
 	<% if (visit) { %>
 
-	${ ui.includeFragment("kenyaemr", "visitSummary", [ visit: visit ]) }
+	${ ui.includeFragment("kpsystem", "visitSummary", [ visit: visit ]) }
 	<% if (!visit.voided) { %>
-	${ ui.includeFragment("kenyaemr", "visitCompletedForms", [ visit: visit ]) }
-	${ ui.includeFragment("kenyaemr", "visitAvailableForms", [ visit: visit ]) }
+	${ ui.includeFragment("kpsystem", "visitCompletedForms", [ visit: visit ]) }
+	${ ui.includeFragment("kpsystem", "visitAvailableForms", [ visit: visit ]) }
 	<% } %>
 
 	<% } else if (form) { %>
@@ -90,7 +90,7 @@
 		<div class="ke-panel-content">
 
 			<% if (encounter) { %>
-			${ ui.includeFragment("kenyaemr", "form/viewHtmlForm", [ encounter: encounter ]) }
+			${ ui.includeFragment("kpsystem", "form/viewHtmlForm", [ encounter: encounter ]) }
 			<% } else { %>
 			<em>Not filled out</em>
 			<% } %>
@@ -100,19 +100,19 @@
 
 	<% } else if (program) { %>
 
-	${ ui.includeFragment("kenyaemr", "program/programHistory", [ patient: currentPatient, program: program, showClinicalData: true ]) }
+	${ ui.includeFragment("kpsystem", "program/programHistory", [ patient: currentPatient, program: program, showClinicalData: true ]) }
 
 	<% } else if (section == "overview") { %>
 
-	${ ui.includeFragment("kenyaemr", "program/programCarePanels", [ patient: currentPatient, complete: true, activeOnly: false ]) }
+	${ ui.includeFragment("kpsystem", "program/programCarePanels", [ patient: currentPatient, complete: true, activeOnly: false ]) }
 
 	<% } else if (section == "moh257") { %>
 
-	${ ui.includeFragment("kenyaemr", "moh257", [ patient: currentPatient ]) }
+	${ ui.includeFragment("kpsystem", "moh257", [ patient: currentPatient ]) }
 
 	<% }else if (section == "summaries") { %>
 
-	${ ui.includeFragment("kenyaemr", "summaries", [ patient: currentPatient ]) }
+	${ ui.includeFragment("kpsystem", "summaries", [ patient: currentPatient ]) }
 
 	<%} %>
 

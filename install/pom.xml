@@ -14,15 +14,15 @@
 
 	<parent>
 		<groupId>org.openmrs.module</groupId>
-		<artifactId>kenyaemr</artifactId>
-		<version>17.0.0-beta</version>
+		<artifactId>kpsystem</artifactId>
+		<version>17.0.1-SNAPSHOT</version>
 	</parent>
 
-	<artifactId>kenyaemr-install</artifactId>
-  <version>17.0.0-beta</version>
+	<artifactId>kpsystem-install</artifactId>
+  <version>17.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
-	<name>KenyaEMR Installation (optional)</name>
-	<description>Installation tools for KenyaEMR</description>
+	<name>KPSystem Installation (optional)</name>
+	<description>Installation tools for KPSystem</description>
 
 	<properties>
 		<dbUser>openmrs</dbUser>
@@ -51,7 +51,7 @@
 			<dependencies>
 				<dependency>
 					<groupId>org.openmrs.module</groupId>
-					<artifactId>kenyaemr-omod</artifactId>
+					<artifactId>kpsystem-omod</artifactId>
 					<version>${project.parent.version}</version>
 				</dependency>
 			</dependencies>

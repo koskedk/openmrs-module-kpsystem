@@ -20,7 +20,7 @@
     <includeIf velocityTest="$patient.getAge($encounter.getEncounterDatetime()) > 5">
 
         <script type="text/javascript">
-            var peer_educator_role = <lookup expression="kenyaemr.getRoleUuidByName('Peer Educator')" />;
+            var peer_educator_role = <lookup expression="kpsystem.getRoleUuidByName('Peer Educator')" />;
 
 
         </script>
@@ -59,7 +59,7 @@
 
             <label>Location</label>
 
-            <encounterLocation default="GlobalProperty:kenyaemr.defaultLocation"/>
+            <encounterLocation default="GlobalProperty:kpsystem.defaultLocation"/>
 
 
         </fieldset>

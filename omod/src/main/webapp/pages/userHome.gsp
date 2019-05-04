@@ -1,5 +1,5 @@
 <%
-	ui.decorateWith("kenyaemr", "standardPage", [ patient: currentPatient, closeChartUrl: ui.pageLink("kenyaemr", "home") ])
+	ui.decorateWith("kpsystem", "standardPage", [ patient: currentPatient, closeChartUrl: ui.pageLink("kpsystem", "home") ])
 %>
 <div class="ke-page-content">
 	<% apps.eachWithIndex { app, i ->

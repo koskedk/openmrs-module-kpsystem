@@ -1,5 +1,5 @@
 <%
-	ui.decorateWith("kenyaui", "panel", [ heading: "Identifier Types" ])
+	ui.decorateWith("kpui", "panel", [ heading: "Identifier Types" ])
 %>
 <table class="ke-table-vertical">
 	<thead>

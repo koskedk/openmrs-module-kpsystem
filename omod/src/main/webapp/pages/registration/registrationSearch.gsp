@@ -1,20 +1,20 @@
 <%
-	ui.decorateWith("kenyaemr", "standardPage", [ layout: "sidebar" ])
+	ui.decorateWith("kpsystem", "standardPage", [ layout: "sidebar" ])
 
 	def menuItems = [
-			[ label: "Create new client", extra: "Client can't be found", iconProvider: "kenyaui", icon: "buttons/patient_add.png", href: ui.pageLink("kenyaemr", "registration/createPatient") ],
-			[ label: "Back to home", iconProvider: "kenyaui", icon: "buttons/back.png", label: "Back to home", href: ui.pageLink("kenyaemr", "registration/registrationHome") ]
+			[ label: "Create new client", extra: "Client can't be found", iconProvider: "kpui", icon: "buttons/patient_add.png", href: ui.pageLink("kpsystem", "registration/createPatient") ],
+			[ label: "Back to home", iconProvider: "kpui", icon: "buttons/back.png", label: "Back to home", href: ui.pageLink("kpsystem", "registration/registrationHome") ]
 	]
 %>
 
 <div class="ke-page-sidebar">
-	${ ui.includeFragment("kenyaemr", "patient/patientSearchForm", [ defaultWhich: "all" ]) }
+	${ ui.includeFragment("kpsystem", "patient/patientSearchForm", [ defaultWhich: "all" ]) }
 
-	${ ui.includeFragment("kenyaui", "widget/panelMenu", [ heading: "Tasks", items: menuItems ]) }
+	${ ui.includeFragment("kpui", "widget/panelMenu", [ heading: "Tasks", items: menuItems ]) }
 </div>
 
 <div class="ke-page-content">
-	${ ui.includeFragment("kenyaemr", "patient/patientSearchResults", [ pageProvider: "kenyaemr", page: "registration/registrationViewPatient" ]) }
+	${ ui.includeFragment("kpsystem", "patient/patientSearchResults", [ pageProvider: "kpsystem", page: "registration/registrationViewPatient" ]) }
 </div>
 
 <script type="text/javascript">

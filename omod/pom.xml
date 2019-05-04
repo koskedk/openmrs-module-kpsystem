@@ -14,15 +14,15 @@
 
 	<parent>
 		<groupId>org.openmrs.module</groupId>
-		<artifactId>kenyaemr</artifactId>
-		<version>17.0.0-beta</version>
+		<artifactId>kpsystem</artifactId>
+		<version>17.0.1-SNAPSHOT</version>
 	</parent>
 
-	<artifactId>kenyaemr-omod</artifactId>
-    <version>17.0.0-beta</version>
+	<artifactId>kpsystem-omod</artifactId>
+    <version>17.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
-	<name>KenyaEMR Module OMOD</name>
-	<description>OMOD project for KenyaEMR Module</description>
+	<name>KPSystem Module OMOD</name>
+	<description>OMOD project for KPSystem Module</description>
 
 	<dependencies>
 		<dependency>
@@ -39,8 +39,8 @@
 		</dependency>
         <dependency>
             <groupId>org.openmrs.module</groupId>
-            <artifactId>kenyaemr-api</artifactId>
-            <version>17.0.0-beta</version>
+            <artifactId>kpsystem-api</artifactId>
+            <version>17.0.1-SNAPSHOT</version>
             <scope>compile</scope>
         </dependency>
     </dependencies>

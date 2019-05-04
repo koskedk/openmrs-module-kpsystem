@@ -7,12 +7,12 @@
 		</div>
 		<% } %>
 
-		<button type="button" class="ke-compact" onclick="ui.navigate('${ ui.pageLink("kenyaemr", "registration/editPatient", [ patientId: patient.id, returnUrl: ui.thisUrl() ]) }')">
-			<img src="${ ui.resourceLink("kenyaui", "images/glyphs/edit.png") }" />
+		<button type="button" class="ke-compact" onclick="ui.navigate('${ ui.pageLink("kpsystem", "registration/editPatient", [ patientId: patient.id, returnUrl: ui.thisUrl() ]) }')">
+			<img src="${ ui.resourceLink("kpui", "images/glyphs/edit.png") }" />
 		</button>
 
 		<% patient.activeAttributes.each { %>
-		${ ui.includeFragment("kenyaui", "widget/dataPoint", [ label: ui.format(it.attributeType), value: it ]) }
+		${ ui.includeFragment("kpui", "widget/dataPoint", [ label: ui.format(it.attributeType), value: it ]) }
 		<% } %>
 	</div>
 </div>

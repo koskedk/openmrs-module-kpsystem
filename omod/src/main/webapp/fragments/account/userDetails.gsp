@@ -7,8 +7,8 @@
 		<div class="ke-warning" style="margin-bottom: 5px">${ ui.message("kenyaemr.loginIsDisabled") }</div>
 		<% } %>
 
-		${ ui.includeFragment("kenyaui", "widget/dataPoint", [ label: "Username", value: user.username ]) }
-		${ ui.includeFragment("kenyaui", "widget/dataPoint", [ label: "Roles", value: user.roles.join(", ") ]) }
+		${ ui.includeFragment("kpui", "widget/dataPoint", [ label: "Username", value: user.username ]) }
+		${ ui.includeFragment("kpui", "widget/dataPoint", [ label: "Roles", value: user.roles.join(", ") ]) }
 
 		<%
 			def inheritedRoles = user.allRoles
@@ -16,7 +16,7 @@
 		%>
 
 		<% if (inheritedRoles) { %>
-		${ ui.includeFragment("kenyaui", "widget/dataPoint", [ label: "Inherited", value: inheritedRoles.join(", ") ]) }
+		${ ui.includeFragment("kpui", "widget/dataPoint", [ label: "Inherited", value: inheritedRoles.join(", ") ]) }
 		<% } %>
 	</div>
 	<% } %>
@@ -24,15 +24,15 @@
 	<div class="ke-panel-footer">
 	<% if (user && !user.retired) { %>
 
-		<%= ui.includeFragment("kenyaui", "widget/dialogForm", [
+		<%= ui.includeFragment("kpui", "widget/dialogForm", [
 				buttonConfig: [
 						label: "Edit",
-						iconProvider: "kenyaui",
+						iconProvider: "kpui",
 						icon: "glyphs/edit.png"
 				],
 				dialogConfig: [ heading: "Edit login details for ${ kenyaui.formatPersonName(person) }", width: 90, height: 90 ],
 				fragment: "account/userDetails",
-				fragmentProvider: "kenyaemr",
+				fragmentProvider: "kpsystem",
 				action: "submit",
 				prefix: "user",
 				commandObject: form,
@@ -56,15 +56,15 @@
 
 	<% } else if (!user) { %>
 
-		<%= ui.includeFragment("kenyaui", "widget/dialogForm", [
+		<%= ui.includeFragment("kpui", "widget/dialogForm", [
 				buttonConfig: [
 						label: "Create login",
-						iconProvider: "kenyaui",
+						iconProvider: "kpui",
 						icon: "buttons/user_enable.png"
 				],
 				dialogConfig: [ heading: "New Login Account for ${ kenyaui.formatPersonName(person) }", width: 90, height: 90 ],
 				fragment: "account/userDetails",
-				fragmentProvider: "kenyaemr",
+				fragmentProvider: "kpsystem",
 				action: "submit",
 				prefix: "user",
 				commandObject: form,

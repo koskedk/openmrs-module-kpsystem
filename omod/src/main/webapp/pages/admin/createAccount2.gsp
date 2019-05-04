@@ -1,13 +1,13 @@
 <%
-	ui.decorateWith("kenyaemr", "standardPage", [ layout: "sidebar" ])
+	ui.decorateWith("kpsystem", "standardPage", [ layout: "sidebar" ])
 
 	def menuItems = [
-			[ label: "Back to previous step", iconProvider: "kenyaui", icon: "buttons/back.png", href: ui.pageLink("kenyaemr", "admin/createAccount1") ]
+			[ label: "Back to previous step", iconProvider: "kpui", icon: "buttons/back.png", href: ui.pageLink("kpsystem", "admin/createAccount1") ]
 	]
 %>
 
 <div class="ke-page-sidebar">
-	${ ui.includeFragment("kenyaui", "widget/panelMenu", [ heading: "Create Account", items: menuItems ]) }
+	${ ui.includeFragment("kpui", "widget/panelMenu", [ heading: "Create Account", items: menuItems ]) }
 
 	<div class="ke-panel-frame">
 		<div class="ke-panel-heading">Help</div>
@@ -19,5 +19,5 @@
 </div>
 
 <div class="ke-page-content">
-	${ ui.includeFragment("kenyaemr", "account/newAccount", [ person: patient ]) }
+	${ ui.includeFragment("kpsystem", "account/newAccount", [ person: patient ]) }
 </div>

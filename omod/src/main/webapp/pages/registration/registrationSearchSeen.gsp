@@ -1,7 +1,7 @@
 <%
-    ui.decorateWith("kenyaemr", "standardPage", [ layout: "sidebar" ])
+    ui.decorateWith("kpsystem", "standardPage", [ layout: "sidebar" ])
 
-    ui.includeJavascript("kenyaemr", "controllers/visit.js")
+    ui.includeJavascript("kpsystem", "controllers/visit.js")
 
 %>
 
@@ -31,10 +31,10 @@
     });
 </script>
 <div class="ke-page-sidebar">
-    ${ ui.decorate("kenyaui", "panel", [ heading: "Select Day to View Seen Clients" ], """<div id="calendar"></div>""") }
+    ${ ui.decorate("kpui", "panel", [ heading: "Select Day to View Seen Clients" ], """<div id="calendar"></div>""") }
 </div>
 <div class="ke-page-content">
-    ${ ui.includeFragment("kenyaemr", "patient/dailySeen", [ pageProvider: "kenyaemr", page: "registration/registrationViewPatient", date: seenDate ]) }
+    ${ ui.includeFragment("kpsystem", "patient/dailySeen", [ pageProvider: "kpsystem", page: "registration/registrationViewPatient", date: seenDate ]) }
 </div>
 
 

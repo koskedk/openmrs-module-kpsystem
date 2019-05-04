@@ -1,7 +1,7 @@
 <%
 	def onFormClick = { form ->
 		def opts = [ appId: currentApp.id, patientId: currentPatient.id, formUuid: form.formUuid, returnUrl: ui.thisUrl() ]
-		"""ui.navigate('${ ui.pageLink('kenyaemr', 'enterForm', opts) }');"""
+		"""ui.navigate('${ ui.pageLink('kpsystem', 'enterForm', opts) }');"""
 	}
 
 	def onEncounterClick = { encounter ->
@@ -15,12 +15,12 @@
 		<fieldset>
 			<legend>New Forms</legend>
 
-			${ ui.includeFragment("kenyaui", "widget/formStack", [ forms: page1AvailableForms, onFormClick: onFormClick ]) }
+			${ ui.includeFragment("kpui", "widget/formStack", [ forms: page1AvailableForms, onFormClick: onFormClick ]) }
 		</fieldset>
 		<br />
 		<fieldset>
 			<legend>Previously Completed Forms</legend>
-			${ ui.includeFragment("kenyaemr", "widget/encounterStack", [ encounters: page1Encounters, onEncounterClick: onEncounterClick ]) }
+			${ ui.includeFragment("kpsystem", "widget/encounterStack", [ encounters: page1Encounters, onEncounterClick: onEncounterClick ]) }
 		</fieldset>
 	</div>
 </div>
@@ -28,16 +28,16 @@
 <div class="ke-panel-frame">
 	<div class="ke-panel-heading">Page 2 (Initial and Followup Visits)</div>
 	<div class="ke-panel-content" style="background-color: #F3F9FF">
-		${ ui.includeFragment("kenyaemr", "widget/encounterStack", [ encounters: page2Encounters, onEncounterClick: onEncounterClick ]) }
+		${ ui.includeFragment("kpsystem", "widget/encounterStack", [ encounters: page2Encounters, onEncounterClick: onEncounterClick ]) }
 		<br />
 		<% if (inHivProgram) { %>
 			<div align="center">
-				${ ui.includeFragment("kenyaui", "widget/button", [
+				${ ui.includeFragment("kpui", "widget/button", [
 						label: "Add Visit Summary",
 						extra: "From column",
-						iconProvider: "kenyaui",
+						iconProvider: "kpui",
 						icon: "buttons/visit_retrospective.png",
-						href: ui.pageLink("kenyaemr", "enterForm", [ appId: currentApp.id, patientId: currentPatient, formUuid: page2Form.uuid, returnUrl: ui.thisUrl() ])
+						href: ui.pageLink("kpsystem", "enterForm", [ appId: currentApp.id, patientId: currentPatient, formUuid: page2Form.uuid, returnUrl: ui.thisUrl() ])
 				]) }
 			</div>
 		<%}%>

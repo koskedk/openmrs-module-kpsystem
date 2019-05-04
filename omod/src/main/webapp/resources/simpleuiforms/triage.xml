@@ -133,7 +133,7 @@
 
             <label>Location</label>
 
-            <encounterLocation default="GlobalProperty:kenyaemr.defaultLocation"/>
+            <encounterLocation default="GlobalProperty:kpsystem.defaultLocation"/>
 
 
         </fieldset>

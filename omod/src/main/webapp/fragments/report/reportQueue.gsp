@@ -24,7 +24,7 @@
 				<td style="text-align: right">
 					<% if (config.allowCancel) { %>
 					<a href="#" ng-click="cancelRequest(request.id)" ng-if="request.status == 'REQUESTED' || request.status == 'PROCESSING'">
-						<img src="${ ui.resourceLink("kenyaui", "images/glyphs/cancel.png") }" class="ke-glyph" /> Cancel
+						<img src="${ ui.resourceLink("kpui", "images/glyphs/cancel.png") }" class="ke-glyph" /> Cancel
 					</a>
 					<% } %>
 				</td>

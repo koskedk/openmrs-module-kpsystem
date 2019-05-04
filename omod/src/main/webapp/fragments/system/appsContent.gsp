@@ -1,5 +1,5 @@
 <%
-	ui.decorateWith("kenyaui", "panel", [ heading: "Registered Apps" ])
+	ui.decorateWith("kpui", "panel", [ heading: "Registered Apps" ])
 %>
 <table class="ke-table-vertical">
 	<thead>

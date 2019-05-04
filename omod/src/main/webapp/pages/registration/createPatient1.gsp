@@ -1,15 +1,15 @@
 <%
-	ui.decorateWith("kenyaemr", "standardPage", [ layout: "sidebar" ])
+	ui.decorateWith("kpsystem", "standardPage", [ layout: "sidebar" ])
 
-	ui.includeJavascript("kenyaemr", "controllers/account.js")
+	ui.includeJavascript("kpsystem", "controllers/account.js")
 
 	def menuItems = [
-			[ label: "Back to home", iconProvider: "kenyaui", icon: "buttons/back.png", label: "Back to home", href: ui.pageLink("kenyaemr", "registration/createPatient") ]
+			[ label: "Back to home", iconProvider: "kpui", icon: "buttons/back.png", label: "Back to home", href: ui.pageLink("kpsystem", "registration/createPatient") ]
 	]
 %>
 
 <div class="ke-page-sidebar">
-	${ ui.includeFragment("kenyaui", "widget/panelMenu", [ heading: "Create Patient", items: menuItems ]) }
+	${ ui.includeFragment("kpui", "widget/panelMenu", [ heading: "Create Patient", items: menuItems ]) }
 
 	<div class="ke-panel-frame">
 		<div class="ke-panel-heading">Help</div>
@@ -32,9 +32,9 @@
 				</tr>
 			</table>
 		</div>
-		<div class="ke-panel-content" ng-controller="AccountSearchResults" ng-init="init('${ currentApp.id }', 'kenyaemr', 'registration/createPatient2')">
+		<div class="ke-panel-content" ng-controller="AccountSearchResults" ng-init="init('${ currentApp.id }', 'kpsystem', 'registration/createPatient2')">
 			<div class="ke-stack-item ke-navigable" ng-repeat="account in results" ng-click="onResultClick(account)">
-				${ ui.includeFragment("kenyaemr", "account/result.full") }
+				${ ui.includeFragment("kpsystem", "account/result.full") }
 			</div>
 		</div>
 	</div>

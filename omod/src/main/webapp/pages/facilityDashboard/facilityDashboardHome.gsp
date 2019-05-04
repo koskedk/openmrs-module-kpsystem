@@ -1,5 +1,5 @@
 <%
-    ui.decorateWith("kenyaemr", "standardPage")
+    ui.decorateWith("kpsystem", "standardPage")
 %>
 <script type="text/javascript" src="../../moduleResources/kenyaemr/scripts/highcharts.js"></script>
-${ ui.includeFragment("kenyaemr", "facilityDashboard/facilityDashboard") }
+${ ui.includeFragment("kpsystem", "facilityDashboard/facilityDashboard") }

@@ -1,5 +1,5 @@
 <%
-	ui.decorateWith("kenyaemr", "standardPage", [ layout: "sidebar" ])
+	ui.decorateWith("kpsystem", "standardPage", [ layout: "sidebar" ])
 %>
 <script type="text/javascript">
 	function showChangePasswordDialog() {
@@ -17,17 +17,17 @@
 </script>
 
 <div class="ke-page-sidebar">
-	${ ui.includeFragment("kenyaui", "widget/panelMenu", [
+	${ ui.includeFragment("kpui", "widget/panelMenu", [
 			heading: "My Profile",
 			items: [
-					[ label: "Change Password", iconProvider: "kenyaui", icon: "buttons/profile_password.png", onClick: "showChangePasswordDialog()" ],
-					[ label: "Change Secret Question", iconProvider: "kenyaui", icon: "buttons/profile_secret_question.png", onClick: "showSecretQuestionDialog()" ]
+					[ label: "Change Password", iconProvider: "kpui", icon: "buttons/profile_password.png", onClick: "showChangePasswordDialog()" ],
+					[ label: "Change Secret Question", iconProvider: "kpui", icon: "buttons/profile_secret_question.png", onClick: "showSecretQuestionDialog()" ]
 			]
 	]) }
 </div>
 
 <div class="ke-page-content">
-	${ ui.includeFragment("kenyaemr", "account/personDetails", [ person: person ]) }
+	${ ui.includeFragment("kpsystem", "account/personDetails", [ person: person ]) }
 
-	${ ui.includeFragment("kenyaemr", "profileLoginDetails", [ tempPassword: tempPassword ]) }
+	${ ui.includeFragment("kpsystem", "profileLoginDetails", [ tempPassword: tempPassword ]) }
 </div>

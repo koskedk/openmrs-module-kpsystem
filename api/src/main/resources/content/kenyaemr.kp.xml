@@ -16,16 +16,16 @@
 
 	<!-- ===================== Program ===================== -->
 
-	<bean id="kenyaemr.kp.program" class="org.openmrs.module.kenyacore.program.ProgramDescriptor">
+	<bean id="kpsystem.kp.program" class="org.openmrs.module.kpcore.program.ProgramDescriptor">
 		<property name="targetUuid" value="${metadata.program.KP}" />
-		<property name="eligibilityCalculation" value="org.openmrs.module.kenyaemr.calculation.library.kp.EligibleForKPProgramCalculation" />
-		<property name="defaultEnrollmentForm" ref="kenyaemr.kp.form.kpClientEnrolment" />
-		<property name="defaultCompletionForm" ref="kenyaemr.kp.form.completion" />
+		<property name="eligibilityCalculation" value="org.openmrs.module.kpsystem.calculation.library.kp.EligibleForKPProgramCalculation" />
+		<property name="defaultEnrollmentForm" ref="kpsystem.kp.form.kpClientEnrolment" />
+		<property name="defaultCompletionForm" ref="kpsystem.kp.form.completion" />
 
 		<property name="visitForms" >
 			<set>
-				<!--<ref bean="kenyaemr.ipt.form.followup" />
-				<ref bean="kenyaemr.common.form.geneXpert" />-->
+				<!--<ref bean="kpsystem.ipt.form.followup" />
+				<ref bean="kpsystem.common.form.geneXpert" />-->
 			</set>
 		</property>
 	
@@ -36,9 +36,9 @@
 		</property>
 		<property name="fragments">
 			<map>
-				<entry key="enrollment-summary" value="kenyaemr:program/hiv/hivEnrollmentSummary" />
-				<entry key="care-panel" value="kenyaemr:program/hiv/hivCarePanel" />
-				<entry key="completion-summary" value="kenyaemr:program/hiv/hivCompletionSummary" />
+				<entry key="enrollment-summary" value="kpsystem:program/hiv/hivEnrollmentSummary" />
+				<entry key="care-panel" value="kpsystem:program/hiv/hivCarePanel" />
+				<entry key="completion-summary" value="kpsystem:program/hiv/hivCompletionSummary" />
 			</map>
 		</property>
 		<property name="order" value="300" />
@@ -47,7 +47,7 @@
 	<!-- ===================== Identifiers ===================== -->
 
 	<!-- District Registration Number -->
-<!-- 	<bean id="kenyaemr.ipt.identifier.districtRegistration" class="org.openmrs.module.kenyacore.identifier.IdentifierDescriptor"> -->
+<!-- 	<bean id="kpsystem.ipt.identifier.districtRegistration" class="org.openmrs.module.kpcore.identifier.IdentifierDescriptor"> -->
 <!-- 		<property name="targetUuid" value="${metadata.identifiertype.DISTRICT_REGISTRATION_NUMBER}" /> -->
 <!-- 		<property name="order" value="60" /> -->
 <!-- 	</bean> -->
@@ -55,34 +55,34 @@
 	<!-- ===================== Forms ===================== -->
 
 	<!-- kp  enrolment -->
-	<bean id="kenyaemr.kp.form.kpClientEnrolment" class="org.openmrs.module.kenyacore.form.FormDescriptor">
+	<bean id="kpsystem.kp.form.kpClientEnrolment" class="org.openmrs.module.kpcore.form.FormDescriptor">
 		<property name="targetUuid" value="c7f47cea-207b-11e9-ab14-d663bd873d93" />
 		<property name="apps">
 			<set>
-				<ref bean="kenyaemr.app.registration" />
-				<ref bean="kenyaemr.app.intake" />
-				<ref bean="kenyaemr.app.clinician" />
-				<ref bean="kenyaemr.app.chart" />
+				<ref bean="kpsystem.app.registration" />
+				<ref bean="kpsystem.app.intake" />
+				<ref bean="kpsystem.app.clinician" />
+				<ref bean="kpsystem.app.chart" />
 			</set>
 		</property>
-		<property name="icon" value="kenyaui:forms/generic.png" />
-		<property name="htmlform" value="kenyaemr:kp/kpClientEnrolment.html" />
+		<property name="icon" value="kpui:forms/generic.png" />
+		<property name="htmlform" value="kpsystem:kp/kpClientEnrolment.html" />
 
 	</bean>
 
 	<!--KP Completion -->
-	<bean id="kenyaemr.kp.form.completion" class="org.openmrs.module.kenyacore.form.FormDescriptor">
+	<bean id="kpsystem.kp.form.completion" class="org.openmrs.module.kpcore.form.FormDescriptor">
 		<property name="targetUuid" value="1f76643e-2495-11e9-ab14-d663bd873d93" />
 		<property name="apps">
 			<set>
-				<ref bean="kenyaemr.app.registration" />
-				<ref bean="kenyaemr.app.intake" />
-				<ref bean="kenyaemr.app.clinician" />
-				<ref bean="kenyaemr.app.chart" />
+				<ref bean="kpsystem.app.registration" />
+				<ref bean="kpsystem.app.intake" />
+				<ref bean="kpsystem.app.clinician" />
+				<ref bean="kpsystem.app.chart" />
 			</set>
 		</property>
-		<property name="icon" value="kenyaui:forms/completion.png" />
-		<property name="htmlform" value="kenyaemr:kp/kpDiscontinuation.html" />
+		<property name="icon" value="kpui:forms/completion.png" />
+		<property name="htmlform" value="kpsystem:kp/kpDiscontinuation.html" />
 	</bean>
 
 </beans>

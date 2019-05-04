@@ -1,5 +1,5 @@
 <%
-	ui.decorateWith("kenyaui", "panel", [ heading: definition.name ])
+	ui.decorateWith("kpui", "panel", [ heading: definition.name ])
 
 	def formatData = { result -> (result != null) ? result : "-" }
 
@@ -7,7 +7,7 @@
 %>
 <script type="text/javascript">
 	function showCohortDialog(dataset, column) {
-		var contentUrl = ui.pageLink('kenyaemr', 'dialog/cohortDialog', { appId: '${ currentApp.id }', request: '${ reportRequest.id }', dataset: dataset, column: column });
+		var contentUrl = ui.pageLink('kpsystem', 'dialog/cohortDialog', { appId: '${ currentApp.id }', request: '${ reportRequest.id }', dataset: dataset, column: column });
 
 		kenyaui.openDynamicDialog({ heading: 'View Cohort', url: contentUrl, width: 90, height: 90, scrolling: true });
 	}
@@ -34,7 +34,7 @@
 	<fieldset>
 		<legend>Parameters</legend>
 		<% definition.parameters.each { %>
-		${ ui.includeFragment("kenyaui", "widget/dataPoint", [ label: it.label, value: reportData.context.parameterValues[it.name] ]) }
+		${ ui.includeFragment("kpui", "widget/dataPoint", [ label: it.label, value: reportData.context.parameterValues[it.name] ]) }
 		<% } %>
 	</fieldset>
 

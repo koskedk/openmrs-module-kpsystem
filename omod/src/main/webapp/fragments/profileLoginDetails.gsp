@@ -1,5 +1,5 @@
 <%
-	ui.decorateWith("kenyaui", "panel", [ heading: "Login Settings" ])
+	ui.decorateWith("kpui", "panel", [ heading: "Login Settings" ])
 
 	def checkCurrentPassword = !config.tempPassword;
 
@@ -7,13 +7,13 @@
 	def changePasswordHiddenProps = checkCurrentPassword ? [] : [ "oldPassword" ]
 %>
 
-${ ui.includeFragment("kenyaui", "widget/dataPoint", [ label: "Username", value: user.username ]) }
-${ ui.includeFragment("kenyaui", "widget/dataPoint", [ label: "Secret question", value: user.secretQuestion ]) }
+${ ui.includeFragment("kpui", "widget/dataPoint", [ label: "Username", value: user.username ]) }
+${ ui.includeFragment("kpui", "widget/dataPoint", [ label: "Secret question", value: user.secretQuestion ]) }
 
-${ ui.includeFragment("kenyaui", "widget/dialogForm", [
+${ ui.includeFragment("kpui", "widget/dialogForm", [
 		id: "change_password",
 		dialogConfig: [ heading: "Change Password" ],
-		fragmentProvider: "kenyaemr",
+		fragmentProvider: "kpsystem",
 		fragment: "profileLoginDetails",
 		action: "changePassword",
 		prefix: "changePasswordForm",
@@ -30,10 +30,10 @@ ${ ui.includeFragment("kenyaui", "widget/dialogForm", [
 		onSuccessCallback:  "ui.reloadPage();"
 ]) }
 
-${ ui.includeFragment("kenyaui", "widget/dialogForm", [
+${ ui.includeFragment("kpui", "widget/dialogForm", [
 		id: "change_secret_question",
 		dialogConfig: [ heading: "Change Secret Question" ],
-		fragmentProvider: "kenyaemr",
+		fragmentProvider: "kpsystem",
 		fragment: "profileLoginDetails",
 		action: "changeSecretQuestion",
 		prefix: "changeSecretQuestionForm",

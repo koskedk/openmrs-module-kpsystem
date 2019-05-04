@@ -3,21 +3,21 @@
 
 	<% if (provider && !provider.retired) { %>
 	<div class="ke-panel-content">
-		${ ui.includeFragment("kenyaui", "widget/dataPoint", [ label: "Provider ID", value: provider.identifier ]) }
+		${ ui.includeFragment("kpui", "widget/dataPoint", [ label: "Provider ID", value: provider.identifier ]) }
 	</div>
 	<% } %>
 
 	<div class="ke-panel-footer">
 	<% if (provider && !provider.retired) { %>
 
-		<%= ui.includeFragment("kenyaui", "widget/dialogForm", [
+		<%= ui.includeFragment("kpui", "widget/dialogForm", [
 				buttonConfig: [
 						label: "Edit",
-						iconProvider: "kenyaui",
+						iconProvider: "kpui",
 						icon: "glyphs/edit.png"
 				],
 				dialogConfig: [ heading: "Edit Provider account for ${ kenyaui.formatPersonName(person) }", width: 50, height: 30 ],
-				fragmentProvider: "kenyaemr",
+				fragmentProvider: "kpsystem",
 				fragment: "account/providerDetails",
 				action: "submit",
 				prefix: "provider",
@@ -34,14 +34,14 @@
 
 	<% } else { %>
 
-		<%= ui.includeFragment("kenyaui", "widget/dialogForm", [
+		<%= ui.includeFragment("kpui", "widget/dialogForm", [
 				buttonConfig: [
 						label: "Make this person a provider",
-						iconProvider: "kenyaui",
+						iconProvider: "kpui",
 						icon: "buttons/provider_${ person.gender == "F" ? 'f' : 'm' }.png"
 				],
 				dialogConfig: [ heading: "New Provider account for ${ kenyaui.formatPersonName(person) }", width: 50, height: 30 ],
-				fragmentProvider: "kenyaemr",
+				fragmentProvider: "kpsystem",
 				fragment: "account/providerDetails",
 				action: "submit",
 				prefix: "provider",

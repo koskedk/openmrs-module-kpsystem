@@ -13,10 +13,10 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.openmrs.module</groupId>
-    <artifactId>kenyaemr</artifactId>
-    <version>17.0.0-beta</version>
+    <artifactId>kpsystem</artifactId>
+    <version>17.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
-    <name>KenyaEMR</name>
+    <name>KPSystem</name>
     <description>OpenMRS-based EMR for Kenya</description>
 
     <organization>
@@ -32,9 +32,9 @@
     </licenses>
 
     <scm>
-        <connection>scm:git:git@github.com:I-TECH/openmrs-module-kenyaemr.git</connection>
-        <developerConnection>scm:git:git@github.com:I-TECH/openmrs-module-kenyaemr.git</developerConnection>
-        <url>scm:git:git@github.com:I-TECH/openmrs-module-kenyaemr.git</url>
+        <connection>scm:git:git@github.com:I-TECH/openmrs-module-kpsystem.git</connection>
+        <developerConnection>scm:git:git@github.com:I-TECH/openmrs-module-kpsystem.git</developerConnection>
+        <url>scm:git:git@github.com:I-TECH/openmrs-module-kpsystem.git</url>
         <tag>HEAD</tag>
     </scm>
 
@@ -57,9 +57,9 @@
         <htmlformentryVersion>2.4</htmlformentryVersion>
         <htmlwidgetsVersion>1.6.6</htmlwidgetsVersion>
         <idgenVersion>2.6</idgenVersion>
-        <kenyacoreVersion>2.4.1-SNAPSHOT</kenyacoreVersion>
-        <kenyadqVersion>1.2</kenyadqVersion>
-        <kenyauiVersion>2.1-SNAPSHOT</kenyauiVersion>
+        <kpcoreVersion>2.4.2-SNAPSHOT</kpcoreVersion>
+        <kpdqVersion>1.4-SNAPSHOT</kpdqVersion>
+        <kpuiVersion>2.2-SNAPSHOT</kpuiVersion>
         <kenyaemrOrderentryVersion>1.0-SNAPSHOT</kenyaemrOrderentryVersion>
         <logicVersion>0.5.2</logicVersion>
         <metadatadeployVersion>1.3</metadatadeployVersion>
@@ -68,7 +68,6 @@
         <reportingVersion>0.9.8.1</reportingVersion>
         <serializationxstreamVersion>0.2.7</serializationxstreamVersion>
         <uiframeworkVersion>3.8</uiframeworkVersion>
-
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.build.timestamp.format>yyyy-MM-dd'T'HH:mm:ssZ</maven.build.timestamp.format>
@@ -129,29 +128,29 @@
 
         <dependency>
             <groupId>org.openmrs.module</groupId>
-            <artifactId>kenyacore-api</artifactId>
-            <version>${kenyacoreVersion}</version>
+            <artifactId>kpcore-api</artifactId>
+            <version>${kpcoreVersion}</version>
             <scope>provided</scope>
         </dependency>
 
         <dependency>
             <groupId>org.openmrs.module</groupId>
-            <artifactId>kenyacore-test</artifactId>
-            <version>${kenyacoreVersion}</version>
+            <artifactId>kpcore-test</artifactId>
+            <version>${kpcoreVersion}</version>
             <scope>test</scope>
         </dependency>
 
         <dependency>
             <groupId>org.openmrs.module</groupId>
-            <artifactId>kenyadq-api</artifactId>
-            <version>${kenyadqVersion}</version>
+            <artifactId>kpdq-api</artifactId>
+            <version>${kpdqVersion}</version>
             <scope>provided</scope>
         </dependency>
 
         <dependency>
             <groupId>org.openmrs.module</groupId>
-            <artifactId>kenyaui-api</artifactId>
-            <version>${kenyauiVersion}</version>
+            <artifactId>kpui-api</artifactId>
+            <version>${kpuiVersion}</version>
             <scope>provided</scope>
         </dependency>
 

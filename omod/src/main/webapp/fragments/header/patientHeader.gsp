@@ -1,5 +1,5 @@
 <%
-	ui.includeJavascript("kenyaemr", "controllers/header.js")
+	ui.includeJavascript("kpsystem", "controllers/header.js")
 
 	def closeChartUrl = config.closeChartUrl ?: appHomepageUrl
 %>
@@ -17,7 +17,7 @@
 			<img width="32" height="32" ng-src="{{ iconUrl }}" />
 		</div>
 		<span class="ke-patient-name">{{ patient.name }}
-				<img style="cursor: pointer" src="${ ui.resourceLink("kenyaui", "images/glyphs/edit.png") }" onclick="ui.navigate('${ ui.pageLink("registrationapp", "editSection", [ patientId: patient.id,sectionId: "demographics", appId:"referenceapplication.registrationapp.registerPatient", returnUrl: ui.thisUrl() ]) }')" />
+				<img style="cursor: pointer" src="${ ui.resourceLink("kpui", "images/glyphs/edit.png") }" onclick="ui.navigate('${ ui.pageLink("registrationapp", "editSection", [ patientId: patient.id,sectionId: "demographics", appId:"referenceapplication.registrationapp.registerPatient", returnUrl: ui.thisUrl() ]) }')" />
 		</span><br/>
 		<span class="ke-patient-gender">{{ patient.gender | keGender }}</span>,
 		<span class="ke-patient-age">{{ patient.age }} <small>(${ kenyaui.formatPersonBirthdate(patient) })</small></span>
@@ -29,12 +29,12 @@
 			<span class="ke-identifier-value">{{ identifier.identifier }}</span>
 		</div>
 		<div>
-			<img style="cursor: pointer" src="${ ui.resourceLink("kenyaui", "images/glyphs/edit.png") }" onclick="ui.navigate('${ ui.pageLink("registrationapp", "editSection", [ patientId: patient.id,sectionId: "patient-identification-section", appId:"referenceapplication.registrationapp.registerPatient", returnUrl: ui.thisUrl() ]) }')" />
+			<img style="cursor: pointer" src="${ ui.resourceLink("kpui", "images/glyphs/edit.png") }" onclick="ui.navigate('${ ui.pageLink("registrationapp", "editSection", [ patientId: patient.id,sectionId: "patient-identification-section", appId:"referenceapplication.registrationapp.registerPatient", returnUrl: ui.thisUrl() ]) }')" />
 		</div>
 	</div>
 
 	<div style="float: right">
-		<button class="ke-compact" title="Close this patient chart" onclick="ke_closeChart()"><img src="${ ui.resourceLink("kenyaui", "images/glyphs/close.png") }"/> Close</button>
+		<button class="ke-compact" title="Close this patient chart" onclick="ke_closeChart()"><img src="${ ui.resourceLink("kpui", "images/glyphs/close.png") }"/> Close</button>
 	</div>
 
 	<div style="clear: both; height: 5px;"></div>

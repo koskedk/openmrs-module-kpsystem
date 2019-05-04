@@ -1,5 +1,5 @@
 <%
-	ui.decorateWith("kenyaemr", "standardPage")
+	ui.decorateWith("kpsystem", "standardPage")
 %>
 <style type="text/css">
 	body {
@@ -27,7 +27,7 @@
 		<table style="margin-left: auto; margin-right: auto; border: 0" cellpadding="3" cellspacing="0">
 			<tr>
 				<td style="padding-right: 15px">
-					<img src="${ ui.resourceLink("kenyaemr", "images/keypop.png") }" width="250" height="250"/>
+					<img src="${ ui.resourceLink("kpsystem", "images/keypop.png") }" width="250" height="250"/>
 				</td>
 				<td style="padding-left: 15px; padding-top: 75px" valign="top">
 					<table border="0" cellpadding="3" cellspacing="0">
@@ -41,7 +41,7 @@
 						</tr>
 						<tr>
 							<td></td>
-							<td style="text-align: left"><button type="submit"><img src="${ ui.resourceLink("kenyaui", "images/glyphs/login.png") }" /> Login</button></td>
+							<td style="text-align: left"><button type="submit"><img src="${ ui.resourceLink("kpui", "images/glyphs/login.png") }" /> Login</button></td>
 						</tr>
 						<tr>
 							<td></td>

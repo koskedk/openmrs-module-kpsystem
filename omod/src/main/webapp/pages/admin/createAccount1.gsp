@@ -1,15 +1,15 @@
 <%
-	ui.decorateWith("kenyaemr", "standardPage", [ layout: "sidebar" ])
+	ui.decorateWith("kpsystem", "standardPage", [ layout: "sidebar" ])
 
-	ui.includeJavascript("kenyaemr", "controllers/patient.js")
+	ui.includeJavascript("kpsystem", "controllers/patient.js")
 
 	def menuItems = [
-			[ label: "Back to home", iconProvider: "kenyaui", icon: "buttons/back.png", label: "Back to accounts", href: ui.pageLink("kenyaemr", "admin/manageAccounts") ]
+			[ label: "Back to home", iconProvider: "kpui", icon: "buttons/back.png", label: "Back to accounts", href: ui.pageLink("kpsystem", "admin/manageAccounts") ]
 	]
 %>
 
 <div class="ke-page-sidebar">
-	${ ui.includeFragment("kenyaui", "widget/panelMenu", [ heading: "Create Account", items: menuItems ]) }
+	${ ui.includeFragment("kpui", "widget/panelMenu", [ heading: "Create Account", items: menuItems ]) }
 
 	<div class="ke-panel-frame">
 		<div class="ke-panel-heading">Help</div>
@@ -38,7 +38,7 @@
 					</td>
 					<td style="width: 50%; text-align: right; vertical-align: middle">
 						<button type="button" onclick="ke_useNewPerson()">
-							<img src="${ ui.resourceLink("kenyaui", "images/buttons/account_add.png") }" /> Use new person
+							<img src="${ ui.resourceLink("kpui", "images/buttons/account_add.png") }" /> Use new person
 						</button>
 					</td>
 				</tr>
@@ -46,7 +46,7 @@
 		</div>
 		<div class="ke-panel-content" ng-controller="PatientSearchResults" ng-init="init('${ currentApp.id }', 'kenyaemr', 'admin/createAccount2')">
 			<div class="ke-stack-item ke-navigable" ng-repeat="patient in results" ng-click="onResultClick(patient)">
-				${ ui.includeFragment("kenyaemr", "patient/result.full") }
+				${ ui.includeFragment("kpsystem", "patient/result.full") }
 			</div>
 		</div>
 	</div>

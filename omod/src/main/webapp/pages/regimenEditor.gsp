@@ -1,5 +1,5 @@
 <%
-	ui.decorateWith("kenyaemr", "standardPage", [ patient: currentPatient, layout: "sidebar" ])
+	ui.decorateWith("kpsystem", "standardPage", [ patient: currentPatient, layout: "sidebar" ])
 
 	def allowNew = !regimenFromObs
 	def allowChange = regimenFromObs && lastEnc.startDate && !lastEnc.endDate
@@ -13,11 +13,11 @@
 	}
 
 	def regimenField = {
-		[ label: "Regimen", formFieldName: "regimen", class: "org.openmrs.module.kenyaemr.regimen.Regimen", fieldFragment: "field/Regimen", category: category ]
+		[ label: "Regimen", formFieldName: "regimen", class: "org.openmrs.module.kpsystem.regimen.Regimen", fieldFragment: "field/Regimen", category: category ]
 	}
 
 	def reasonFields = { reasonType ->
-		ui.includeFragment("kenyaui", "widget/rowOfFields", [
+		ui.includeFragment("kpui", "widget/rowOfFields", [
 			fields: [
 				[ label: "Reason", formFieldName: "changeReason", class: "org.openmrs.Concept", fieldFragment: "field/RegimenChangeReason", category: category, reasonType: reasonType ],
 				[ label: "Reason (Other)", formFieldName: "changeReasonNonCoded", class: java.lang.String ]
@@ -51,7 +51,7 @@
 
 	function undoLastChange() {
 		if (confirm('Undo the last regimen change?')) {
-			ui.getFragmentActionAsJson('kenyaemr', 'regimenUtil', 'undoLastChange', { patient: ${ currentPatient.patientId }, category: '${ category }' }, function (data) {
+			ui.getFragmentActionAsJson('kpsystem', 'regimenUtil', 'undoLastChange', { patient: ${ currentPatient.patientId }, category: '${ category }' }, function (data) {
 				ui.reloadPage();
 			});
 		}
@@ -60,7 +60,7 @@
 
 <div class="ke-page-sidebar">
 	<div class="ke-panel-frame">
-		${ ui.includeFragment("kenyaui", "widget/panelMenuItem", [ iconProvider: "kenyaui", icon: "buttons/back.png", label: "Back", href: returnUrl ]) }
+		${ ui.includeFragment("kpui", "widget/panelMenuItem", [ iconProvider: "kpui", icon: "buttons/back.png", label: "Back", href: returnUrl ]) }
 	</div>
 </div>
 
@@ -72,27 +72,27 @@
 				<div class="ke-warning" style="margin-bottom: 5px">Editing of current regimen can be done by a KenyaEMR user with Manager permissions</div>
 			<% } %>
 
-			${ ui.includeFragment("kenyaemr", "regimenHistory", [ history: regimenFromObs ]) }
+			${ ui.includeFragment("kpsystem", "regimenHistory", [ history: regimenFromObs ]) }
 
 			<br/>
 
 			<div id="regimen-action-buttons" style="text-align: center">
 			<% if (allowNew) { %>
-			${ ui.includeFragment("kenyaui", "widget/button", [ iconProvider: "kenyaui", icon: "buttons/regimen_start.png", label: "Start", extra: "a new regimen", onClick: "choseAction('start-new-regimen')" ]) }
+			${ ui.includeFragment("kpui", "widget/button", [ iconProvider: "kpui", icon: "buttons/regimen_start.png", label: "Start", extra: "a new regimen", onClick: "choseAction('start-new-regimen')" ]) }
 			<% } %>
 
 			<% if (allowChange) { %>
-			${ ui.includeFragment("kenyaui", "widget/button", [ iconProvider: "kenyaui", icon: "buttons/regimen_change.png", label: "Change", extra: "the current regimen", onClick: "choseAction('change-regimen')" ]) }
+			${ ui.includeFragment("kpui", "widget/button", [ iconProvider: "kpui", icon: "buttons/regimen_change.png", label: "Change", extra: "the current regimen", onClick: "choseAction('change-regimen')" ]) }
 
-			${ ui.includeFragment("kenyaui", "widget/button", [ iconProvider: "kenyaui", icon: "buttons/regimen_stop.png", label: "Stop", extra: "the current regimen", onClick: "choseAction('stop-regimen')" ]) }
+			${ ui.includeFragment("kpui", "widget/button", [ iconProvider: "kpui", icon: "buttons/regimen_stop.png", label: "Stop", extra: "the current regimen", onClick: "choseAction('stop-regimen')" ]) }
 			<% } %>
 
 			<% if (allowRestart) { %>
-			${ ui.includeFragment("kenyaui", "widget/button", [ iconProvider: "kenyaui", icon: "buttons/regimen_restart.png", label: "Restart", extra: "a new regimen", onClick: "choseAction('restart-regimen')" ]) }
+			${ ui.includeFragment("kpui", "widget/button", [ iconProvider: "kpui", icon: "buttons/regimen_restart.png", label: "Restart", extra: "a new regimen", onClick: "choseAction('restart-regimen')" ]) }
 			<% } %>
 
 			<% if (allowUndo) { %>
-			${ ui.includeFragment("kenyaui", "widget/button", [ iconProvider: "kenyaui", icon: "buttons/undo.png", label: "Undo", extra: "the last change", onClick: "undoLastChange()" ]) }
+			${ ui.includeFragment("kpui", "widget/button", [ iconProvider: "kpui", icon: "buttons/undo.png", label: "Undo", extra: "the last change", onClick: "undoLastChange()" ]) }
 			<% } %>
 			</div>
 
@@ -100,8 +100,8 @@
 			<fieldset id="start-new-regimen" class="regimen-action-form" style="display: none">
 				<legend>Start New Regimen</legend>
 
-				${ ui.includeFragment("kenyaui", "widget/form", [
-					fragmentProvider: "kenyaemr",
+				${ ui.includeFragment("kpui", "widget/form", [
+					fragmentProvider: "kpsystem",
 					fragment: "regimenUtil",
 					action: "createRegimenEventEncounter",
 					fields: [
@@ -123,8 +123,8 @@
 			<fieldset id="change-regimen" class="regimen-action-form" style="display: none">
 				<legend>Change Regimen</legend>
 
-				${ ui.includeFragment("kenyaui", "widget/form", [
-					fragmentProvider: "kenyaemr",
+				${ ui.includeFragment("kpui", "widget/form", [
+					fragmentProvider: "kpsystem",
 					fragment: "regimenUtil",
 					action: "createRegimenEventEncounter",
 					fields: [
@@ -145,8 +145,8 @@
 			<fieldset id="stop-regimen" class="regimen-action-form" style="display: none">
 				<legend>Stop Regimen</legend>
 
-				${ ui.includeFragment("kenyaui", "widget/form", [
-					fragmentProvider: "kenyaemr",
+				${ ui.includeFragment("kpui", "widget/form", [
+					fragmentProvider: "kpsystem",
 					fragment: "regimenUtil",
 					action: "createRegimenEventEncounter",
 					fields: [
@@ -168,8 +168,8 @@
 			<fieldset id="restart-regimen" class="regimen-action-form" style="display: none">
 				<legend>Restart Regimen</legend>
 
-				${ ui.includeFragment("kenyaui", "widget/form", [
-					fragmentProvider: "kenyaemr",
+				${ ui.includeFragment("kpui", "widget/form", [
+					fragmentProvider: "kpsystem",
 					fragment: "regimenUtil",
 					action: "createRegimenEventEncounter",
 					fields: [

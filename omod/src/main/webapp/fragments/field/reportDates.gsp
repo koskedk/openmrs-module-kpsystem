@@ -9,9 +9,9 @@
 </script>
 
 <div>
-	<b>Start Date: </b> ${ ui.includeFragment("kenyaui", "field/java.util.Date", [ id: "startDate", formFieldName: startFieldName]) }
+	<b>Start Date: </b> ${ ui.includeFragment("kpui", "field/java.util.Date", [ id: "startDate", formFieldName: startFieldName]) }
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	<b>End Date: </b> ${ ui.includeFragment("kenyaui", "field/java.util.Date", [ id: "endDate", formFieldName: endFieldName]) }
+	<b>End Date: </b> ${ ui.includeFragment("kpui", "field/java.util.Date", [ id: "endDate", formFieldName: endFieldName]) }
 </div>
 
 <span id="${ config.id }-error" class="error" style="display: none"></span>

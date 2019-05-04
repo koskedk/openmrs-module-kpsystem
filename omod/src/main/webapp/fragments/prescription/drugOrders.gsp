@@ -1,7 +1,7 @@
 <%
 	config.require("heading", "orders")
 
-	ui.decorateWith("kenyaui", "panel", [ heading: config.heading ])
+	ui.decorateWith("kpui", "panel", [ heading: config.heading ])
 %>
 <table class="ke-table-vertical">
 	<thead>

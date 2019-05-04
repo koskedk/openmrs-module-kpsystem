@@ -1,5 +1,5 @@
 <%
-	ui.decorateWith("kenyaui", "panel", [ heading: "Forms" ])
+	ui.decorateWith("kpui", "panel", [ heading: "Forms" ])
 %>
 <table class="ke-table-vertical">
 	<thead>

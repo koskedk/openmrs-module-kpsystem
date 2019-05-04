@@ -1,5 +1,5 @@
 <%
-    ui.includeCss("kenyaemr", "referenceapplication.css", 100)
+    ui.includeCss("kpsystem", "referenceapplication.css", 100)
 %>
 
 

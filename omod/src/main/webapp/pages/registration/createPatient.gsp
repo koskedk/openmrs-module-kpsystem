@@ -1,15 +1,15 @@
 <%
-	ui.decorateWith("kenyaemr", "standardPage", [ layout: "sidebar" ])
+	ui.decorateWith("kpsystem", "standardPage", [ layout: "sidebar" ])
 
-	ui.includeJavascript("kenyaemr", "controllers/account.js")
+	ui.includeJavascript("kpsystem", "controllers/account.js")
 
 	def menuItems = [
-			[ label: "Back to home", iconProvider: "kenyaui", icon: "buttons/back.png", label: "Back to home", href: ui.pageLink("kenyaemr", "registration/registrationHome") ]
+			[ label: "Back to home", iconProvider: "kpui", icon: "buttons/back.png", label: "Back to home", href: ui.pageLink("kpsystem", "registration/registrationHome") ]
 	]
 %>
 
 <div class="ke-page-sidebar">
-	${ ui.includeFragment("kenyaui", "widget/panelMenu", [ heading: "Create Client", items: menuItems ]) }
+	${ ui.includeFragment("kpui", "widget/panelMenu", [ heading: "Create Client", items: menuItems ]) }
 
 	<div class="ke-panel-frame">
 		<div class="ke-panel-heading">Help</div>
@@ -50,12 +50,12 @@
 			<tr>
 				<td style="width: 50%; text-align: left; vertical-align: middle">
 					<button type="button" onclick="ke_useNewPerson()">
-						<img src="${ ui.resourceLink("kenyaui", "images/buttons/account_add.png") }" /> Register new Client
+						<img src="${ ui.resourceLink("kpui", "images/buttons/account_add.png") }" /> Register new Client
 					</button>
 				</td>
 				<td style="width: 50%; text-align: right; vertical-align: middle">
 					<button type="button" onclick="ke_useExistingPerson()">
-						<img src="${ ui.resourceLink("kenyaui", "images/buttons/account_add.png") }" /> Register Existing User to Client
+						<img src="${ ui.resourceLink("kpui", "images/buttons/account_add.png") }" /> Register Existing User to Client
 					</button>
 				</td>
 

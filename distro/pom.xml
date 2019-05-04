@@ -15,15 +15,15 @@
 
 	<parent>
 		<groupId>org.openmrs.module</groupId>
-		<artifactId>kenyaemr</artifactId>
-		<version>17.0.0-beta</version>
+		<artifactId>kpsystem</artifactId>
+		<version>17.0.1-SNAPSHOT</version>
 	</parent>
 
-	<artifactId>kenyaemr-distro</artifactId>
-  <version>17.0.0-beta</version>
+	<artifactId>kpsystem-distro</artifactId>
+  <version>17.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
-	<name>KenyaEMR Distribution (optional)</name>
-	<description>Distribution project for KenyaEMR</description>
+	<name>KPSystem Distribution (optional)</name>
+	<description>Distribution project for KPSystem</description>
 
 	<dependencies>
 
@@ -67,26 +67,26 @@
 
 		<dependency>
 			<groupId>org.openmrs.module</groupId>
-			<artifactId>kenyacore-omod</artifactId>
-			<version>${kenyacoreVersion}</version>
+			<artifactId>kpcore-omod</artifactId>
+			<version>${kpcoreVersion}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.openmrs.module</groupId>
-			<artifactId>kenyadq-omod</artifactId>
-			<version>${kenyadqVersion}</version>
+			<artifactId>kpdq-omod</artifactId>
+			<version>${kpdqVersion}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.openmrs.module</groupId>
-			<artifactId>kenyaemr-omod</artifactId>
+			<artifactId>kpsystem-omod</artifactId>
 			<version>${project.parent.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.openmrs.module</groupId>
-			<artifactId>kenyaui-omod</artifactId>
-			<version>${kenyauiVersion}</version>
+			<artifactId>kpui-omod</artifactId>
+			<version>${kpuiVersion}</version>
 		</dependency>
 
 		<dependency>

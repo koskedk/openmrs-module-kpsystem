@@ -8,7 +8,7 @@ if (config.reports && config.reports.size() > 0) {
 		def iconPath = "reports/" + (report.isIndicator ? "indicator" : "patient_list") + ".png"
 %>
 <div class="ke-stack-item ke-navigable" onclick="${ onClick }">
-	${ ui.includeFragment("kenyaui", "widget/icon", [ iconProvider: "kenyaui", icon: iconPath, tooltip: "View report" ]) }
+	${ ui.includeFragment("kpui", "widget/icon", [ iconProvider: "kpui", icon: iconPath, tooltip: "View report" ]) }
 	<b>${ report.name }</b>
 	<div class="ke-extra">${ report.description ?: "" }</div>
 </div>

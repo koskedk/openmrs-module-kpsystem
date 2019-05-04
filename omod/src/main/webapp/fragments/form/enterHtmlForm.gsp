@@ -1,6 +1,6 @@
 <%
-	ui.includeJavascript("kenyaemr", "dwr-util.js")
-	ui.includeJavascript("kenyaemr", "kenyahfe.js")
+	ui.includeJavascript("kpsystem", "dwr-util.js")
+	ui.includeJavascript("kpsystem", "kenyahfe.js")
 %>
 
 <script type="text/javascript" src="/${ contextPath }/moduleResources/htmlformentry/htmlFormEntry.js"></script>
@@ -42,11 +42,11 @@
 
 	<div style="display: none">
 		<button id="discard-button" type="button">
-			<img src="${ ui.resourceLink("kenyaui", "images/glyphs/cancel.png") }" /> Discard Changes
+			<img src="${ ui.resourceLink("kpui", "images/glyphs/cancel.png") }" /> Discard Changes
 		</button>
 	</div>
 
-	<form id="htmlform" method="post" action="${ ui.actionLink("kenyaemr", "form/enterHtmlForm", "submit") }">
+	<form id="htmlform" method="post" action="${ ui.actionLink("kpsystem", "form/enterHtmlForm", "submit") }">
 		<input type="hidden" name="appId" value="${ currentApp.id }"/>
 		<input type="hidden" name="personId" value="${ command.patient.personId }"/>
 		<input type="hidden" name="formId" value="${ command.form.formId }"/>

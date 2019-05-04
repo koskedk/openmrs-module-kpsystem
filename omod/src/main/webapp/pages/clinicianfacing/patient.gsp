@@ -1,6 +1,6 @@
 <%
-    ui.decorateWith("kenyaemr", "standardPage", [ patient: currentPatient ])
-    ui.includeCss("kenyaemr", "referenceapplication.css", 100)
+    ui.decorateWith("kpsystem", "standardPage", [ patient: currentPatient ])
+    ui.includeCss("kpsystem", "referenceapplication.css", 100)
     ui.includeCss("kenyaemrorderentry", "font-awesome.css")
     ui.includeCss("kenyaemrorderentry", "font-awesome.min.css")
     ui.includeCss("kenyaemrorderentry", "font-awesome.css.map")
@@ -40,7 +40,7 @@
                         <span class="right">[ <a href="${editAliasLink}">Edit Client Alias</a>|<a href="${editContactInfoLink}">Edit Contact Info</a> ]</span>
                     </div>
                     <div class="info-body">
-                        ${ ui.includeFragment("kenyaemr", "patient/patientSummary", [ patient: currentPatient ]) }
+                        ${ ui.includeFragment("kpsystem", "patient/patientSummary", [ patient: currentPatient ]) }
                     </div>
                 </div>
 
@@ -51,7 +51,7 @@
                         <i class="icon-pencil edit-action right" title="Add" onclick="location.href = '${addSocialStatusFormLink}'"></i>
                     </div>
                     <div class="info-body">
-                        ${ ui.includeFragment("kenyaemr", "program/kp/socialStatus", [ patient: currentPatient]) }
+                        ${ ui.includeFragment("kpsystem", "program/kp/socialStatus", [ patient: currentPatient]) }
                     </div>
                 </div>
 
@@ -61,7 +61,7 @@
                         <h3>Program History</h3>
                     </div>
                     <div class="info-body">
-                        ${ ui.includeFragment("kenyaemr", "program/programHistories", [ patient: currentPatient, showClinicalData: true ]) }
+                        ${ ui.includeFragment("kpsystem", "program/programHistories", [ patient: currentPatient, showClinicalData: true ]) }
                     </div>
                 </div>
 
@@ -74,7 +74,7 @@
                         <h3>Recent Visits</h3>
                     </div>
                     <div class="info-body">
-                        ${ ui.includeFragment("kenyaemr", "patient/recentVisits", [ patient: currentPatient, showClinicalData: true ]) }
+                        ${ ui.includeFragment("kpsystem", "patient/recentVisits", [ patient: currentPatient, showClinicalData: true ]) }
                     </div>
                 </div>
 
@@ -84,7 +84,7 @@
                         <h3>Vitals</h3>
                     </div>
                     <div class="info-body">
-                        ${ ui.includeFragment("kenyaemr", "patient/currentVitals", [ patient: currentPatient]) }
+                        ${ ui.includeFragment("kpsystem", "patient/currentVitals", [ patient: currentPatient]) }
                     </div>
                 </div>
 

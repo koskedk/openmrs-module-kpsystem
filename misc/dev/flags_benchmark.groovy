@@ -27,8 +27,8 @@ def contextSingleton = { className ->
 	return Context.getRegisteredComponents(Context.loadClass(className))[0]
 }
 
-def manager = contextSingleton("org.openmrs.module.kenyacore.calculation.CalculationManager")
-def flagClazz = Context.loadClass("org.openmrs.module.kenyacore.calculation.PatientFlagCalculation")
+def manager = contextSingleton("org.openmrs.module.kpcore.calculation.CalculationManager")
+def flagClazz = Context.loadClass("org.openmrs.module.kpcore.calculation.PatientFlagCalculation")
 def calcSvc = Context.getService(Context.loadClass("org.openmrs.calculation.patient.PatientCalculationService"))
 def cohort = Context.patientSetService.getPatientsByCharacteristics(null, null, null) // all patients
 def calcTimes = [:]

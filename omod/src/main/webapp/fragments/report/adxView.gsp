@@ -27,7 +27,7 @@ textarea {
 
 <div class="ke-page-sidebar">
 	<div class="ke-panel-frame">
-		${ ui.includeFragment("kenyaui", "widget/panelMenuItem", [ iconProvider: "kenyaui", icon: "buttons/back.png", label: "Back", href: returnUrl ]) }
+		${ ui.includeFragment("kpui", "widget/panelMenuItem", [ iconProvider: "kpui", icon: "buttons/back.png", label: "Back", href: returnUrl ]) }
 	</div>
 </div>
 <div class="ke-page-content">
@@ -47,7 +47,7 @@ textarea {
 	</fieldset>
 
 	<div id="showStatus">
-		<span id="msgSpan"></span> &nbsp;&nbsp;<img src="${ ui.resourceLink("kenyaui", "images/loader_small.gif") }"/>
+		<span id="msgSpan"></span> &nbsp;&nbsp;<img src="${ ui.resourceLink("kpui", "images/loader_small.gif") }"/>
 	</div>
 	<br/>
 	<div id="msg"></div>

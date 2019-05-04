@@ -1,5 +1,5 @@
 <%
-	ui.decorateWith("kenyaemr", "standardPage", [ patient: currentPatient, layout: "sidebar" ])
+	ui.decorateWith("kpsystem", "standardPage", [ patient: currentPatient, layout: "sidebar" ])
 %>
 <style>
 div.grid      { display:block; }
@@ -27,7 +27,7 @@ div.section-title {
 
 <div class="ke-page-sidebar">
 	<div class="ke-panel-frame">
-		${ ui.includeFragment("kenyaui", "widget/panelMenuItem", [ iconProvider: "kenyaui", icon: "buttons/back.png", label: "Back", href: returnUrl ]) }
+		${ ui.includeFragment("kpui", "widget/panelMenuItem", [ iconProvider: "kpui", icon: "buttons/back.png", label: "Back", href: returnUrl ]) }
 	</div>
 </div>
 
@@ -68,7 +68,7 @@ div.section-title {
 			<div class="ke-stack-item">
                 <div class="grid">
                     <div class="column-one">
-                        ${ ui.includeFragment("kenyaui", "widget/dataPoint", [ label: ui.format(rel.type), value: rel.personLink ]) }
+                        ${ ui.includeFragment("kpui", "widget/dataPoint", [ label: ui.format(rel.type), value: rel.personLink ]) }
                     </div>
                     <div class="column-two">${rel.age}</div>
                     <div class="column-three">${rel.dateConfirmed}</div>
@@ -101,7 +101,7 @@ div.section-title {
             <div class="ke-stack-item">
                 <div class="grid">
                     <div class="column-one">
-                        ${ ui.includeFragment("kenyaui", "widget/dataPoint", [ label: ui.format(rel.type), value: rel.personLink ]) }
+                        ${ ui.includeFragment("kpui", "widget/dataPoint", [ label: ui.format(rel.type), value: rel.personLink ]) }
                     </div>
                     <div class="column-two">${rel.age}</div>
                     <div class="column-three">${rel.lastTestDate}</div>
@@ -134,7 +134,7 @@ div.section-title {
             <div class="ke-stack-item">
                 <div class="grid">
                     <div class="column-one">
-                        ${ ui.includeFragment("kenyaui", "widget/dataPoint", [ label: ui.format(rel.relType), value: rel.contact ]) }
+                        ${ ui.includeFragment("kpui", "widget/dataPoint", [ label: ui.format(rel.relType), value: rel.contact ]) }
                     </div>
                     <div class="column-two">${rel.age}</div>
                     <div class="column-three">${rel.baselineStatus}</div>

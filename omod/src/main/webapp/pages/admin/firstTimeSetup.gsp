@@ -1,5 +1,5 @@
 <%
-	ui.decorateWith("kenyaemr", "standardPage")
+	ui.decorateWith("kpsystem", "standardPage")
 
 	def fields = [
 			[
@@ -42,25 +42,25 @@
 
 	<% if (isSuperUser) { %>
 
-	${ ui.includeFragment("kenyaemr", "system/externalRequirements") }
+	${ ui.includeFragment("kpsystem", "system/externalRequirements") }
 
 	<div class="ke-panel-frame">
-		<div class="ke-panel-heading">${ ui.message("kenyaemr.admin.firstTimeSetup") }</div>
+		<div class="ke-panel-heading">${ ui.message("kpsystem.admin.firstTimeSetup") }</div>
 
 		<div class="ke-panel-content">
-			<form id="settings-form" action="${ ui.pageLink("kenyaemr", "admin/firstTimeSetup") }">
+			<form id="settings-form" action="${ ui.pageLink("kpsystem", "admin/firstTimeSetup") }">
 				<% if (defaultLocation) { %>
 					<div class="ke-warning" style="margin-bottom: 5px">Ensure that all visits are closed before changing the default location</div>
 				<% } %>
 
 				<% fields.each { %>
-				${ ui.includeFragment("kenyaui", "widget/labeledField", it) }
+				${ ui.includeFragment("kpui", "widget/labeledField", it) }
 				<% } %>
 			</form>
 		</div>
 
 		<div class="ke-panel-controls">
-			<button type="submit" form="settings-form"><img src="${ ui.resourceLink("kenyaui", "images/glyphs/ok.png") }" /> Save Settings</button>
+			<button type="submit" form="settings-form"><img src="${ ui.resourceLink("kpui", "images/glyphs/ok.png") }" /> Save Settings</button>
 		</div>
 	</div>
 

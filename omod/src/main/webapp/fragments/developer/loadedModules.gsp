@@ -1,8 +1,8 @@
 <%
-	ui.decorateWith("kenyaui", "panel", [ heading: "Loaded Modules" ])
+	ui.decorateWith("kpui", "panel", [ heading: "Loaded Modules" ])
 
 	def stateImage = { state ->
-		state ? """<img src="${ ui.resourceLink("kenyaui", "images/success.png") }" />""" : ""
+		state ? """<img src="${ ui.resourceLink("kpui", "images/success.png") }" />""" : ""
 	}
 %>
 <table class="ke-table-vertical">

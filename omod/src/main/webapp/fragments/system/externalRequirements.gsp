@@ -1,5 +1,5 @@
 <%
-	ui.decorateWith("kenyaui", "panel", [ heading: ui.message("kenyaemr.admin.externalRequirements") ])
+	ui.decorateWith("kpui", "panel", [ heading: ui.message(".admin.externalRequirements") ])
 %>
 <table class="ke-table-vertical">
 	<thead>
@@ -11,7 +11,7 @@
 	<tbody>
 		<% requirements.each { requirement -> %>
 		<tr>
-			<td style="text-align: left"><img src="${ ui.resourceLink("kenyaui", "images/" + (requirement.satisfied ? "success.png" : "alert.png")) }" /></td>
+			<td style="text-align: left"><img src="${ ui.resourceLink("kpui", "images/" + (requirement.satisfied ? "success.png" : "alert.png")) }" /></td>
 			<td style="text-align: left">${ requirement.name }</td>
 			<td>${ requirement.requiredVersion }</td>
 			<td>${ requirement.foundVersion ?: "<i>None</i>" }</td>

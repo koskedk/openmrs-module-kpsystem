@@ -1,18 +1,18 @@
 <%
-	ui.decorateWith("kenyaemr", "standardPage", [ layout: "sidebar" ])
+	ui.decorateWith("kpsystem", "standardPage", [ layout: "sidebar" ])
 
 	def menuItemsNew = [
-			[ label: "Seen Clients", iconProvider: "kenyaui", icon: "buttons/patients.png", href: ui.pageLink("kenyaemr", "clinician/clinicianSearchSeen") ]
+			[ label: "Seen Clients", iconProvider: "kpui", icon: "buttons/patients.png", href: ui.pageLink("kpsystem", "clinician/clinicianSearchSeen") ]
 	]
 %>
 
 <div class="ke-page-sidebar">
-	${ ui.includeFragment("kenyaemr", "patient/patientSearchForm", [ defaultWhich: "checked-in" ]) }
-	${ ui.includeFragment("kenyaui", "widget/panelMenu", [ heading: "", items: menuItemsNew ]) }
+	${ ui.includeFragment("kpsystem", "patient/patientSearchForm", [ defaultWhich: "checked-in" ]) }
+	${ ui.includeFragment("kpui", "widget/panelMenu", [ heading: "", items: menuItemsNew ]) }
 </div>
 
 <div class="ke-page-content">
-	${ ui.includeFragment("kenyaemr", "patient/patientSearchResults", [ pageProvider: "kenyaemr", page: "clinicianfacing/patient" ]) }
+	${ ui.includeFragment("kpsystem", "patient/patientSearchResults", [ pageProvider: "kpsystem", page: "clinicianfacing/patient" ]) }
 </div>
 
 <script type="text/javascript">

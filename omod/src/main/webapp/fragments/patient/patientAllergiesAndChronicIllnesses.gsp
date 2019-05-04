@@ -1,5 +1,5 @@
 <%
-	ui.decorateWith("kenyaui", "panel", [ heading: "Allergies & Chronic Illnesses", frameOnly: true ])
+	ui.decorateWith("kpui", "panel", [ heading: "Allergies & Chronic Illnesses", frameOnly: true ])
 %>
 <script type="text/javascript">
 

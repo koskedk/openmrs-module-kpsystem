@@ -1,11 +1,11 @@
 <%
-	ui.decorateWith("kenyaui", "panel", [ heading: "Groovy Console", frameOnly: true ]);
+	ui.decorateWith("kpui", "panel", [ heading: "Groovy Console", frameOnly: true ]);
 
-	ui.includeJavascript("kenyaemr", "codemirror.js");
-	ui.includeJavascript("kenyaemr", "codemirror-groovy.js");
-	ui.includeCss("kenyaemr", "codemirror.css");
+	ui.includeJavascript("kpsystem", "codemirror.js");
+	ui.includeJavascript("kpsystem", "codemirror-groovy.js");
+	ui.includeCss("kpsystem", "codemirror.css");
 
-	ui.includeJavascript("kenyaemr", "controllers/developer.js");
+	ui.includeJavascript("kpsystem", "controllers/developer.js");
 %>
 <style type="text/css">
 	.CodeMirror {

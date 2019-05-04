@@ -1,7 +1,7 @@
 <table style="width: 100%">
 	<tr>
 		<td style="width: 32px; vertical-align: top; padding-right: 5px">
-			<img src="${ ui.resourceLink("kenyaui", "images/buttons/facility.png") }" />
+			<img src="${ ui.resourceLink("kpui", "images/buttons/facility.png") }" />
 		</td>
 		<td style="text-align: left; vertical-align: top; width: 33%">
 			<strong>{{ facility.name }}</strong><br/>

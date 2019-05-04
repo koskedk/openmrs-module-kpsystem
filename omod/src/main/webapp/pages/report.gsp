@@ -1,11 +1,11 @@
 <%
-	ui.decorateWith("kenyaemr", "standardPage", [ layout: "sidebar" ])
+	ui.decorateWith("kpsystem", "standardPage", [ layout: "sidebar" ])
 
-	ui.includeJavascript("kenyaemr", "controllers/report.js")
+	ui.includeJavascript("kpsystem", "controllers/report.js")
 
 	def menuItems =  [
-			[ iconProvider: "kenyaui", icon: "buttons/report_generate.png", label: "Request report", onClick: "requestReport()" ],
-			[ iconProvider: "kenyaui", icon: "buttons/back.png", label: "Back to home", href: returnUrl ]
+			[ iconProvider: "kpui", icon: "buttons/report_generate.png", label: "Request report", onClick: "requestReport()" ],
+			[ iconProvider: "kpui", icon: "buttons/back.png", label: "Back to home", href: returnUrl ]
 	]
 %>
 <script type="text/javascript">
@@ -25,7 +25,7 @@
 	<div class="ke-panel-frame" id="end-of-day">
 		<div class="ke-panel-heading">Tasks</div>
 		<% menuItems.each { item -> %>
-			${ ui.includeFragment("kenyaui", "widget/panelMenuItem", item) }
+			${ ui.includeFragment("kpui", "widget/panelMenuItem", item) }
 		<% } %>
 	</div>
 </div>
@@ -35,13 +35,13 @@
 	<div class="ke-panel-frame">
 		<div class="ke-panel-heading">Summary</div>
 		<div class="ke-panel-content">
-			${ ui.includeFragment("kenyaui", "widget/dataPoint", [ label: "Name", value: definition.name ]) }
+			${ ui.includeFragment("kpui", "widget/dataPoint", [ label: "Name", value: definition.name ]) }
 			<% if (definition.description) { %>
-			${ ui.includeFragment("kenyaui", "widget/dataPoint", [ label: "Description", value: definition.description ]) }
+			${ ui.includeFragment("kpui", "widget/dataPoint", [ label: "Description", value: definition.description ]) }
 			<% } %>
 		</div>
 	</div>
-	${ ui.includeFragment("kenyaemr", "report/reportQueue", [ allowCancel: false ]) }
+	${ ui.includeFragment("kpsystem", "report/reportQueue", [ allowCancel: false ]) }
 
 	<div class="ke-panel-frame">
 		<div class="ke-panel-heading">Finished</div>
@@ -71,13 +71,13 @@
 								<tr>
 									<td>
 										<a href="#" ng-click="viewReportData(request.id)">
-											<img src="${ ui.resourceLink("kenyaui", "images/glyphs/view.png") }" class="ke-glyph" /> View
+											<img src="${ ui.resourceLink("kpui", "images/glyphs/view.png") }" class="ke-glyph" /> View
 										</a>
 									</td>
 									<td>
 										<div ng-if="request.hasDataSet">
 											<a href="#" ng-click="exportReportData(request.id, 'csv')">
-												<img src="${ ui.resourceLink("kenyaui", "images/glyphs/csv.png") }" class="ke-glyph" /> CSV
+												<img src="${ ui.resourceLink("kpui", "images/glyphs/csv.png") }" class="ke-glyph" /> CSV
 											</a>
 										</div>
 									</td>
@@ -85,7 +85,7 @@
 										<div ng-if="request.hasDataSet">
 											<% if (excelRenderable){ %>
 											<a href="#" ng-click="exportReportData(request.id , 'excel')">
-												<img src="${ ui.resourceLink("kenyaui", "images/glyphs/excel.png") }" class="ke-glyph" /> Excel
+												<img src="${ ui.resourceLink("kpui", "images/glyphs/excel.png") }" class="ke-glyph" /> Excel
 											</a>
 											<% } %>
 										</div>
@@ -94,7 +94,7 @@
 										<div ng-if="request.hasDataSet">
 											<% if (adxConfigured){ %>
 											<a href="#" ng-click="viewAdxData(request.id)">
-												<img src="${ ui.resourceLink("kenyaui", "images/glyphs/csv.png") }" class="ke-glyph" /> ADX
+												<img src="${ ui.resourceLink("kpui", "images/glyphs/csv.png") }" class="ke-glyph" /> ADX
 											</a>
 											<% } %>
 										</div>
@@ -105,7 +105,7 @@
 						</div>
 						<div ng-if="request.status == 'FAILED'">
 							<a href="#" ng-click="viewReportError(request.id)">
-								<img src="${ ui.resourceLink("kenyaui", "images/glyphs/monitor.png") }" class="ke-glyph" /> Error
+								<img src="${ ui.resourceLink("kpui", "images/glyphs/monitor.png") }" class="ke-glyph" /> Error
 							</a>
 						</div>
 					</td>
@@ -121,5 +121,5 @@
 </div>
 
 <div id="request-dialog-template" title="Request Report" style="display: none">
-	${ ui.includeFragment("kenyaemr", "report/reportRequestForm", [ definition: definition, onRequestCallback: "onReportRequest" ]) }
+	${ ui.includeFragment("kpsystem", "report/reportRequestForm", [ definition: definition, onRequestCallback: "onReportRequest" ]) }
 </div>

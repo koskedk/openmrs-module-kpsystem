@@ -1,4 +1,4 @@
 <%
-	ui.decorateWith("kenyaemr", "standardPage")
+	ui.decorateWith("kpsystem", "standardPage")
 %>
-${ ui.includeFragment("kenyaemr", "report/adxView", [ request: reportRequest.id, returnUrl: returnUrl ]) }
+${ ui.includeFragment("kpsystem", "report/adxView", [ request: reportRequest.id, returnUrl: returnUrl ]) }

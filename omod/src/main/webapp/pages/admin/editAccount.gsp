@@ -1,17 +1,17 @@
 <%
-	ui.decorateWith("kenyaemr", "standardPage", [ layout: "sidebar" ])
+	ui.decorateWith("kpsystem", "standardPage", [ layout: "sidebar" ])
 
 	def menuItems = []
 
 	if (user) {
 		if (user.retired) {
-			menuItems << [ iconProvider: "kenyaui", icon: "buttons/enable.png", label: "Enable login", onClick: "ke_onEnableUser(" + user.id + ")" ]
+			menuItems << [ iconProvider: "kpui", icon: "buttons/enable.png", label: "Enable login", onClick: "ke_onEnableUser(" + user.id + ")" ]
 		} else {
-			menuItems << [ iconProvider: "kenyaui", icon: "buttons/disable.png", label: "Disable login", onClick: "ke_onDisableUser(" + user.id + ")" ]
+			menuItems << [ iconProvider: "kpui", icon: "buttons/disable.png", label: "Disable login", onClick: "ke_onDisableUser(" + user.id + ")" ]
 		}
 	}
 
-	menuItems << [ iconProvider: "kenyaui", icon: "buttons/back.png", label: "Back to accounts", href: ui.pageLink("kenyaemr", "admin/manageAccounts") ]
+	menuItems << [ iconProvider: "kpui", icon: "buttons/back.png", label: "Back to accounts", href: ui.pageLink("kpsystem", "admin/manageAccounts") ]
 %>
 
 <script type="text/javascript">
@@ -20,7 +20,7 @@
 			heading: 'User',
 			message: '${ ui.message("kenyaemr.confirmReenableUser") }',
 			okCallback: function() {
-				ui.getFragmentActionAsJson('kenyaemr', 'account/accountUtils', 'unretireUser', { userId: userId, reason: 'Admin UI' }, function() {
+				ui.getFragmentActionAsJson('kpsystem', 'account/accountUtils', 'unretireUser', { userId: userId, reason: 'Admin UI' }, function() {
 					ui.reloadPage();
 				});
 			}
@@ -31,7 +31,7 @@
 			heading: 'User',
 			message: '${ ui.message("kenyaemr.confirmDisableUser") }',
 			okCallback: function() {
-				ui.getFragmentActionAsJson('kenyaemr', 'account/accountUtils', 'retireUser', { userId: userId, reason: 'Admin UI' }, function() {
+				ui.getFragmentActionAsJson('kpsystem', 'account/accountUtils', 'retireUser', { userId: userId, reason: 'Admin UI' }, function() {
 					ui.reloadPage();
 				});
 			}
@@ -40,13 +40,13 @@
 </script>
 
 <div class="ke-page-sidebar">
-	${ ui.includeFragment("kenyaui", "widget/panelMenu", [ heading: "Account", items: menuItems ]) }
+	${ ui.includeFragment("kpui", "widget/panelMenu", [ heading: "Account", items: menuItems ]) }
 </div>
 
 <div class="ke-page-content">
 <% if (person) { %>
-	${ ui.includeFragment("kenyaemr", "account/editAccount") }
+	${ ui.includeFragment("kpsystem", "account/editAccount") }
 <% } else { %>
-	${ ui.includeFragment("kenyaemr", "account/newAccount") }
+	${ ui.includeFragment("kpsystem", "account/newAccount") }
 <% } %>
 </div>
