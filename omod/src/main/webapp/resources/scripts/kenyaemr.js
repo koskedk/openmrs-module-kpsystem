@@ -18,7 +18,7 @@ kenyaui.configureSearch('person', {
 	searchProvider: 'kpsystem',
 	searchFragment: 'search',
 	format: function(person) {
-		var icon = ui.resourceLink('kenyaui', 'images/glyphs/' + ((person.isPatient ? 'patient' : 'person') + '_' + person.gender) + '.png');
+		var icon = ui.resourceLink('kpui', 'images/glyphs/' + ((person.isPatient ? 'patient' : 'person') + '_' + person.gender) + '.png');
 		var html = '<img src="' + icon + '" class="ke-glyph" /> ' + person.name;
 		if (person.age) {
 			html += ' <span style="color: #999">' + person.age + '</span>';
@@ -31,7 +31,7 @@ kenyaui.configureSearch('patient', {
 	searchProvider: 'kpsystem',
 	searchFragment: 'search',
 	format: function(patient) {
-		var icon = ui.resourceLink('kenyaui', 'images/glyphs/patient_' + patient.gender + '.png');
+		var icon = ui.resourceLink('kpui', 'images/glyphs/patient_' + patient.gender + '.png');
 		var html = '<img src="' + icon + '" class="ke-glyph" /> ' + patient.name;
 		if (patient.age) {
 			html += ' <span style="color: #999">' + patient.age + '</span>';
@@ -163,7 +163,7 @@ var kenyaemrApp = angular.module('kenyaemr', [ 'kenyaui' ]);
 					var name = resource.name;
 					var url = helpSiteUrl + '/' + resource.file;
 					var type = endsWith(resource.file, '.pdf') ? 'pdf' : 'video';
-					var icon = ui.resourceLink('kenyaui', 'images/glyphs/' + type + '.png');
+					var icon = ui.resourceLink('kpui', 'images/glyphs/' + type + '.png');
 					return { name: name, url: url, icon: icon };
 				});
 

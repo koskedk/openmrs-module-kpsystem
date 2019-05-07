@@ -27,7 +27,7 @@ import org.springframework.stereotype.Component;
  * Use to list patients who missed appointment
  */
 @Component
-@Builds({"kenyaemr.common.report.missedAppointment"})
+@Builds({"kpsystem.common.report.missedAppointment"})
 public class MissedAppointmentReportBuilder extends CalculationReportBuilder {
 
     @Override

@@ -159,16 +159,16 @@ public class UserDetailsFragmentController {
 			EditUserDetailsForm command = (EditUserDetailsForm) target;
 
 			if (StringUtils.isEmpty(command.getUsername())) {
-				errors.rejectValue("username", "kenyaemr.error.required");
+				errors.rejectValue("username", "kpsystem.error.required");
 			} else {
 				if ((original == null || !command.getUsername().equals(original.getUsername()))
 						&& Context.getUserService().getUserByUsername(command.getUsername()) != null) {
-					errors.rejectValue("username", "kenyaemr.error.username.taken");
+					errors.rejectValue("username", "kpsystem.error.username.taken");
 				}
 			}
 
 			if (StringUtils.isEmpty(command.getPassword())) {
-				errors.rejectValue("password", "kenyaemr.error.required");
+				errors.rejectValue("password", "kpsystem.error.required");
 			} else {
 				if (!PLACEHOLDER.equals(command.getPassword()) || !PLACEHOLDER.equals(command.getConfirmPassword())) {
 					try {
@@ -178,9 +178,9 @@ public class UserDetailsFragmentController {
 						errors.rejectValue("password", e.getMessage());
 					}
 					if (StringUtils.isEmpty(command.getConfirmPassword())) {
-						errors.rejectValue("confirmPassword", "kenyaemr.error.required");
+						errors.rejectValue("confirmPassword", "kpsystem.error.required");
 					} else if (!command.getPassword().equals(command.getConfirmPassword())) {
-						errors.rejectValue("confirmPassword", "kenyaemr.error.confirmPassword.match");
+						errors.rejectValue("confirmPassword", "kpsystem.error.confirmPassword.match");
 					}
 				}
 			}
@@ -190,7 +190,7 @@ public class UserDetailsFragmentController {
 					&& !(command.getSecretQuestion().equals("") && original.getSecretQuestion() == null)
 					&& !command.getSecretQuestion().equals(original.getSecretQuestion())
 					&& PLACEHOLDER.equals(command.getSecretAnswer())) {
-				errors.rejectValue("secretAnswer", "kenyaemr.error.secretAnswerNotChangedWithQuestion");
+				errors.rejectValue("secretAnswer", "kpsystem.error.secretAnswerNotChangedWithQuestion");
 			}
 
 			require(errors, "roles");

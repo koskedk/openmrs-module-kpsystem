@@ -164,7 +164,7 @@ public class NewAccountFragmentController {
 			if (StringUtils.isNotEmpty(username)) {
 				hasUser = true;
 				if (Context.getUserService().getUserByUsername(username) != null) {
-					errors.rejectValue("username", "kenyaemr.error.username.taken");
+					errors.rejectValue("username", "kpsystem.error.username.taken");
 				}
 				
 				if (StringUtils.isEmpty(password)) {
@@ -182,7 +182,7 @@ public class NewAccountFragmentController {
 				if (StringUtils.isEmpty(confirmPassword)) {
 					require(errors, "confirmPassword");
 				} else if (!OpenmrsUtil.nullSafeEquals(password, confirmPassword)) {
-					errors.rejectValue("confirmPassword", "kenyaemr.error.confirmPassword.match");
+					errors.rejectValue("confirmPassword", "kpsystem.error.confirmPassword.match");
 				}
 				
 				require(errors, "roles");
@@ -193,7 +193,7 @@ public class NewAccountFragmentController {
 				hasProvider = true;
 				Provider withId = Context.getProviderService().getProviderByIdentifier(providerIdentifier);
 				if (withId != null) {
-					errors.rejectValue("providerIdentifier", "kenyaemr.error.providerIdentifier.taken");
+					errors.rejectValue("providerIdentifier", "kpsystem.error.providerIdentifier.taken");
 				}
 			}
 			

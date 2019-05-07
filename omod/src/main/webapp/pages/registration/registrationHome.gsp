@@ -31,7 +31,7 @@
 			defaultDate: '${ kenyaui.formatDateParam(scheduleDate) }',
 			gotoCurrent: true,
 			onSelect: function(dateText) {
-				ui.navigate('kenyaemr', 'registration/registrationHome', { scheduleDate: dateText });
+				ui.navigate('kpsystem', 'registration/registrationHome', { scheduleDate: dateText });
 			}
 		});
 	});

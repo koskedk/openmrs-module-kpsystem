@@ -45,7 +45,7 @@ import org.springframework.stereotype.Component;
 import java.util.Date;
 
 @Component
-@Builds({"kenyaemr.hiv.report.htsPositiveCLientsNotLinkedToCare"})
+@Builds({"kpsystem.hiv.report.htsPositiveCLientsNotLinkedToCare"})
 public class HTSPositiveNotLinkedClientsReportBuilder extends AbstractHybridReportBuilder {
     public static final String ENC_DATE_FORMAT = "yyyy/MM/dd";
     public static final String DATE_FORMAT = "dd/MM/yyyy";

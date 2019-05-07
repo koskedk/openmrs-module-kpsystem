@@ -240,6 +240,6 @@ kenyaemrApp.controller('RecentlyViewed', ['$scope', '$http', function($scope, $h
 	 * @param patient the clicked patient
 	 */
 	$scope.onResultClick = function(patient) {
-		ui.navigate('kenyaemr', 'chart/chartViewPatient', { patientId: patient.id });
+		ui.navigate('kpsystem', 'chart/chartViewPatient', { patientId: patient.id });
 	};
 }]);

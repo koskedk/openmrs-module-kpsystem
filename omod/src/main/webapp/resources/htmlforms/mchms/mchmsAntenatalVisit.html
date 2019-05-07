@@ -43,7 +43,7 @@
     var NOT_HIV_TESTED_ID = 1402;
     var NEGATIVE = 664;
     var UNKNOWN = 1067;
-    var PATIENT_IS_ENROLLED_HIV = <lookup expression="kenyaemr.hasHivUniquePatientNumber()" />;
+    var PATIENT_IS_ENROLLED_HIV = <lookup expression="kpsystem.hasHivUniquePatientNumber()" />;
     var PATIENT_IS_REPORTED_HIV = "<lookup expression="fn.latestObs(159427).getValueCoded()"/>";
     var LATEST_VIRAL_LOAD_DATE = "<lookup expression="fn.latestObs(856).getObsDatetime()"/>";
     var LATEST_VIRAL_LOAD_VALUE = "<lookup expression="fn.latestObs(856).valueNumeric"/>"

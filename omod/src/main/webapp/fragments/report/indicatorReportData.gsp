@@ -13,7 +13,7 @@
 	}
 
 	function downloadCohort(reportRequest, dataSet, column) {
-		ui.navigate('kenyaemr', 'dialog/cohortDownload',
+		ui.navigate('kpsystem', 'dialog/cohortDownload',
 				{
 					appId: '${ currentApp.id }',
 					request: reportRequest,

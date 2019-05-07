@@ -72,7 +72,7 @@ public class ReportPageController {
 			excelRenderable = true;
 		}
 
-		String mappingString = admService.getGlobalProperty("kenyaemr.adxDatasetMapping");
+		String mappingString = admService.getGlobalProperty("kpsystem.adxDatasetMapping");
 		ObjectNode mappingDetails = EmrUtils.getDatasetMappingForReport(definition.getName(), mappingString);
 		model.addAttribute("report", report);
 		model.addAttribute("definition", definition);

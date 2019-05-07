@@ -114,9 +114,9 @@ public class ProfileLoginDetailsFragmentController {
 		public void validate(Object target, Errors errors) {
 			ChangePasswordForm form = (ChangePasswordForm) target;
 
-			ValidationUtils.rejectIfEmptyOrWhitespace(errors, "oldPassword", "kenyaemr.error.required");
-			ValidationUtils.rejectIfEmptyOrWhitespace(errors, "newPassword", "kenyaemr.error.required");
-			ValidationUtils.rejectIfEmptyOrWhitespace(errors, "confirmNewPassword", "kenyaemr.error.required");
+			ValidationUtils.rejectIfEmptyOrWhitespace(errors, "oldPassword", "kpsystem.error.required");
+			ValidationUtils.rejectIfEmptyOrWhitespace(errors, "newPassword", "kpsystem.error.required");
+			ValidationUtils.rejectIfEmptyOrWhitespace(errors, "confirmNewPassword", "kpsystem.error.required");
 
 
 			if (!errors.hasErrors()) {
@@ -128,7 +128,7 @@ public class ProfileLoginDetailsFragmentController {
 						errors.rejectValue("newPassword", e.getMessage());
 					}
 				} else {
-					errors.rejectValue("confirmNewPassword", "kenyaemr.error.confirmPassword.match");
+					errors.rejectValue("confirmNewPassword", "kpsystem.error.confirmPassword.match");
 				}
 			}
 		}
@@ -178,9 +178,9 @@ public class ProfileLoginDetailsFragmentController {
 
 		@Override
 		public void validate(Object target, Errors errors) {
-			ValidationUtils.rejectIfEmptyOrWhitespace(errors, "currentPassword", "kenyaemr.error.required");
-			ValidationUtils.rejectIfEmptyOrWhitespace(errors, "secretQuestion", "kenyaemr.error.required");
-			ValidationUtils.rejectIfEmptyOrWhitespace(errors, "newSecretAnswer", "kenyaemr.error.required");
+			ValidationUtils.rejectIfEmptyOrWhitespace(errors, "currentPassword", "kpsystem.error.required");
+			ValidationUtils.rejectIfEmptyOrWhitespace(errors, "secretQuestion", "kpsystem.error.required");
+			ValidationUtils.rejectIfEmptyOrWhitespace(errors, "newSecretAnswer", "kpsystem.error.required");
 		}
 
 		public String getCurrentPassword() {

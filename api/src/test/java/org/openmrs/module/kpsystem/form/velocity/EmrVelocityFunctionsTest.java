@@ -96,7 +96,7 @@ public class EmrVelocityFunctionsTest extends BaseModuleContextSensitiveTest {
 	@Test
 	public void getGlobalProperty_shouldReturnPropertyValue() {
 		GlobalProperty gp = Context.getAdministrationService().getGlobalPropertyObject(EmrConstants.GP_DEFAULT_LOCATION);
-		Assert.assertThat(functionsForSession1.getGlobalProperty("kenyaemr.defaultLocation"), is(gp.getValue()));
+		Assert.assertThat(functionsForSession1.getGlobalProperty("kpsystem.defaultLocation"), is(gp.getValue()));
 
 		// Check no exception for non-existent
 		Assert.assertThat(functionsForSession1.getGlobalProperty("xxx.xxx"), is(nullValue()));

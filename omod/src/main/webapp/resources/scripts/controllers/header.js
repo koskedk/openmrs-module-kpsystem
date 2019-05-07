@@ -36,7 +36,7 @@ kenyaemrApp.controller('PatientHeader', ['$scope', '$http', '$timeout', function
 		$http.get(ui.fragmentActionLink('kpsystem', 'search', 'patient', { id: $scope.patientId })).
 			success(function(patient) {
 				$scope.patient = patient;
-				$scope.iconUrl = ui.resourceLink('kenyaui', 'images/buttons/patient_' + patient.gender + '.png');
+				$scope.iconUrl = ui.resourceLink('kpui', 'images/buttons/patient_' + patient.gender + '.png');
 
 				// Only lookup flags for alive and non-voided patients, and if there is a current app
 				if (!patient.dead && !patient.voided && $scope.appId) {

@@ -25,7 +25,7 @@
             gotoCurrent: true,
             maxDate: new Date,
             onSelect: function(dateText) {
-                ui.navigate('kenyaemr', 'registration/registrationSearchSeen', { seenDate: dateText });
+                ui.navigate('kpsystem', 'registration/registrationSearchSeen', { seenDate: dateText });
             }
         });
     });

@@ -35,11 +35,11 @@
 	<script type="text/javascript">
 
 		function ke_useNewPerson() {
-			ui.navigate('kenyaemr', 'registration/createPatient2');
+			ui.navigate('kpsystem', 'registration/createPatient2');
 		}
 
 		function ke_useExistingPerson() {
-			ui.navigate('kenyaemr', 'registration/createPatient1');
+			ui.navigate('kpsystem', 'registration/createPatient1');
 		}
 
 	</script>

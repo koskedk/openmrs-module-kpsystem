@@ -174,7 +174,7 @@ public class FamilyAndPartnerTestingPageController {
 			if (person.isPatient()) {
 				Map<String, Object> params = new HashMap<String, Object>();
 				params.put("patientId", person.getId());
-				params.put("appId", "kenyaemr.medicalEncounter");
+				params.put("appId", "kpsystem.medicalEncounter");
 				params.put("returnUrl", returnUrl);
 				linkUrl = ui.pageLink(pageRequest.getProviderName(), pageRequest.getPageName(), params);
 				linkIcon = ui.resourceLink("kpui", "images/glyphs/patient_" + genderCode + ".png");
@@ -182,7 +182,7 @@ public class FamilyAndPartnerTestingPageController {
 			else {
 				Map<String, Object> params = new HashMap<String, Object>();
 				params.put("personId", person.getId());
-                params.put("appId", "kenyaemr.medicalEncounter");
+                params.put("appId", "kpsystem.medicalEncounter");
                 params.put("returnUrl", returnUrl);
 				linkUrl = ui.pageLink(EmrConstants.MODULE_ID, "admin/editAccount", params);
 				linkIcon = ui.resourceLink("kpui", "images/glyphs/person_" + genderCode + ".png");

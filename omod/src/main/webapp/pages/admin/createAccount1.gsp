@@ -24,7 +24,7 @@
 
 	<script type="text/javascript">
 		function ke_useNewPerson() {
-			ui.navigate('kenyaemr', 'admin/createAccount2');
+			ui.navigate('kpsystem', 'admin/createAccount2');
 		}
 	</script>
 
@@ -44,7 +44,7 @@
 				</tr>
 			</table>
 		</div>
-		<div class="ke-panel-content" ng-controller="PatientSearchResults" ng-init="init('${ currentApp.id }', 'kenyaemr', 'admin/createAccount2')">
+		<div class="ke-panel-content" ng-controller="PatientSearchResults" ng-init="init('${ currentApp.id }', 'kpsystem', 'admin/createAccount2')">
 			<div class="ke-stack-item ke-navigable" ng-repeat="patient in results" ng-click="onResultClick(patient)">
 				${ ui.includeFragment("kpsystem", "patient/result.full") }
 			</div>

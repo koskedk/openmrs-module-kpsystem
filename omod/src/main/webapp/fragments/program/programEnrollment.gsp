@@ -1,5 +1,5 @@
 <% if (encounter) { %>
-<button type="button" class="ke-compact" onclick="ui.navigate('${ ui.pageLink("kpsystem", "editForm", [ encounterId: encounter.id, appId: "kenyaemr.medicalEncounter", returnUrl: ui.thisUrl() ]) }')">
+<button type="button" class="ke-compact" onclick="ui.navigate('${ ui.pageLink("kpsystem", "editForm", [ encounterId: encounter.id, appId: "kpsystem.medicalEncounter", returnUrl: ui.thisUrl() ]) }')">
 	<img src="${ ui.resourceLink("kpui", "images/glyphs/edit.png") }" />
 </button>
 <% } %>

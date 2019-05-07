@@ -4,7 +4,7 @@
 	<% if (user) { %>
 	<div class="ke-panel-content">
 		<% if (user.retired) { %>
-		<div class="ke-warning" style="margin-bottom: 5px">${ ui.message("kenyaemr.loginIsDisabled") }</div>
+		<div class="ke-warning" style="margin-bottom: 5px">${ ui.message("kpsystem.loginIsDisabled") }</div>
 		<% } %>
 
 		${ ui.includeFragment("kpui", "widget/dataPoint", [ label: "Username", value: user.username ]) }

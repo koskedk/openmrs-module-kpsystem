@@ -94,7 +94,7 @@ public class ProviderDetailsFragmentController {
 			if (identifier != null) {
 				Provider withId = Context.getProviderService().getProviderByIdentifier(identifier);
 				if (withId != null && !withId.equals(original)) {
-					errors.rejectValue("identifier", "kenyaemr.error.providerIdentifier.taken");
+					errors.rejectValue("identifier", "kpsystem.error.providerIdentifier.taken");
 				}
 			}
 		}

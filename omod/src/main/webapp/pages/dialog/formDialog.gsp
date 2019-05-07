@@ -1,7 +1,7 @@
 <div class="ke-panel-content">
 	<script type="text/javascript">
 		function onEncounterEdit() {
-			ui.navigate('kenyaemr', 'editForm', { appId: '${ currentApp.id }', encounterId: ${ encounter.id }, returnUrl: '${ currentUrl }' });
+			ui.navigate('kpsystem', 'editForm', { appId: '${ currentApp.id }', encounterId: ${ encounter.id }, returnUrl: '${ currentUrl }' });
 		}
 		function onEncounterDelete(encounterId) {
 			if (confirm('Are you sure you want to delete this encounter?')) {

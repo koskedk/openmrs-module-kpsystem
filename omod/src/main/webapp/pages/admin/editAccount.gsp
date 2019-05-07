@@ -18,7 +18,7 @@
 	function ke_onEnableUser(userId) {
 		kenyaui.openConfirmDialog({
 			heading: 'User',
-			message: '${ ui.message("kenyaemr.confirmReenableUser") }',
+			message: '${ ui.message("kpsystem.confirmReenableUser") }',
 			okCallback: function() {
 				ui.getFragmentActionAsJson('kpsystem', 'account/accountUtils', 'unretireUser', { userId: userId, reason: 'Admin UI' }, function() {
 					ui.reloadPage();
@@ -29,7 +29,7 @@
 	function ke_onDisableUser(userId) {
 		kenyaui.openConfirmDialog({
 			heading: 'User',
-			message: '${ ui.message("kenyaemr.confirmDisableUser") }',
+			message: '${ ui.message("kpsystem.confirmDisableUser") }',
 			okCallback: function() {
 				ui.getFragmentActionAsJson('kpsystem', 'account/accountUtils', 'retireUser', { userId: userId, reason: 'Admin UI' }, function() {
 					ui.reloadPage();

@@ -5,7 +5,7 @@
 		</a>
 	</div>
 	<div style="float: left">
-		<span style="font-size: 24px; color:#000000;">${ ui.message("kenyaemr.title") }</span>
+		<span style="font-size: 24px; color:#000000;">${ ui.message("kpsystem.title") }</span>
 		<span style="font-size: 10px; color: #7f7b72;">1.0.0, powered by OpenMRS</span>
 		<br/>
 		<% if (systemLocation) { %>
@@ -19,7 +19,7 @@
 		<img src="${ ui.resourceLink("kpsystem", "images/logos/moh.png") }" width="48" height="48" />
 	</div>
 	<div style="float: right; text-align: right; font-size: 13px; font-weight: bold; padding: 9px 5px 0 0; color: #7f7b72;">
-		${ ui.message("kenyaemr.subtitle") }
+		${ ui.message("kpsystem.subtitle") }
 	</div>
 
 	<div style="clear: both"></div>

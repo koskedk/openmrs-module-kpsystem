@@ -36,13 +36,13 @@
 <div class="ke-panel-footer">
 	<% if (currentEnrollment) { %>
 
-	<button type="button" onclick="ui.navigate('${ ui.pageLink("kpsystem", "enterForm", [ patientId: patient.id, formUuid: defaultCompletionForm.targetUuid, appId: currentApp != null ? currentApp.id : "kenyaemr.medicalEncounter", returnUrl: ui.thisUrl() ]) }')">
+	<button type="button" onclick="ui.navigate('${ ui.pageLink("kpsystem", "enterForm", [ patientId: patient.id, formUuid: defaultCompletionForm.targetUuid, appId: currentApp != null ? currentApp.id : "kpsystem.medicalEncounter", returnUrl: ui.thisUrl() ]) }')">
 		<img src="${ ui.resourceLink("kpui", "images/glyphs/discontinue.png") }" /> Discontinue
 	</button>
 
 	<% } else if (patientIsEligible) { %>
 
-	<button type="button" onclick="ui.navigate('${ ui.pageLink("kpsystem", "enterForm", [ patientId: patient.id, formUuid: defaultEnrollmentForm.targetUuid, appId: currentApp != null ? currentApp.id : "kenyaemr.medicalEncounter", returnUrl: ui.thisUrl() ]) }')">
+	<button type="button" onclick="ui.navigate('${ ui.pageLink("kpsystem", "enterForm", [ patientId: patient.id, formUuid: defaultEnrollmentForm.targetUuid, appId: currentApp != null ? currentApp.id : "kpsystem.medicalEncounter", returnUrl: ui.thisUrl() ]) }')">
 		<img src="${ ui.resourceLink("kpui", "images/glyphs/enroll.png") }" /> Enroll
 	</button>
 

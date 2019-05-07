@@ -113,8 +113,8 @@ public class AdxViewFragmentController {
         administrationService = Context.getAdministrationService();
 		locationService = Context.getLocationService();
 
-        Integer locationId = Integer.parseInt(administrationService.getGlobalProperty("kenyaemr.defaultLocation"));
-        String mappingString = administrationService.getGlobalProperty("kenyaemr.adxDatasetMapping");
+        Integer locationId = Integer.parseInt(administrationService.getGlobalProperty("kpsystem.defaultLocation"));
+        String mappingString = administrationService.getGlobalProperty("kpsystem.adxDatasetMapping");
 
         Location location = locationService.getLocation(locationId);
         ObjectNode mappingDetails = EmrUtils.getDatasetMappingForReport(reportData.getDefinition().getName(), mappingString);
@@ -179,8 +179,8 @@ public class AdxViewFragmentController {
 
         Date reportDate = (Date) reportData.getContext().getParameterValue("startDate");
 
-        Integer locationId = Integer.parseInt(administrationService.getGlobalProperty("kenyaemr.defaultLocation"));
-        String mappingString = administrationService.getGlobalProperty("kenyaemr.adxDatasetMapping");
+        Integer locationId = Integer.parseInt(administrationService.getGlobalProperty("kpsystem.defaultLocation"));
+        String mappingString = administrationService.getGlobalProperty("kpsystem.adxDatasetMapping");
         Location location = locationService.getLocation(locationId);
         ObjectNode mappingDetails = EmrUtils.getDatasetMappingForReport(reportData.getDefinition().getName(), mappingString);
         String serverAddress = administrationService.getGlobalProperty("ilServer.address");

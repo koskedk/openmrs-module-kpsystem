@@ -49,7 +49,7 @@ import java.util.Arrays;
 import java.util.List;
 
 @Component
-@Builds({"kenyaemr.hiv.report.htsLinkageRegister"})
+@Builds({"kpsystem.hiv.report.htsLinkageRegister"})
 public class HTSLinkageRegisterReportBuilder extends AbstractReportBuilder {
     public static final String DATE_FORMAT = "yyyy/MM/dd";
 

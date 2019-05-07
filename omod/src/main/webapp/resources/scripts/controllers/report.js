@@ -82,7 +82,7 @@ kenyaemrApp.controller('ReportController', ['$scope', '$http', '$timeout', funct
 	 * @param requestId the report request id
 	 */
 	$scope.viewReportData = function(requestId) {
-		ui.navigate('kenyaemr', 'reportView', { appId: $scope.appId, request: requestId, returnUrl: location.href });
+		ui.navigate('kpsystem', 'reportView', { appId: $scope.appId, request: requestId, returnUrl: location.href });
 	};
 
 	/**
@@ -91,7 +91,7 @@ kenyaemrApp.controller('ReportController', ['$scope', '$http', '$timeout', funct
 	 * @param type the export type
 	 */
 	$scope.exportReportData = function(requestId, type) {
-		ui.navigate('kenyaemr', 'reportExport', { appId: $scope.appId, request: requestId, type: type });
+		ui.navigate('kpsystem', 'reportExport', { appId: $scope.appId, request: requestId, type: type });
 	};
 
 	/**
@@ -104,7 +104,7 @@ kenyaemrApp.controller('ReportController', ['$scope', '$http', '$timeout', funct
 	};
 
     $scope.viewAdxData = function(requestId) {
-        ui.navigate('kenyaemr', 'reports/adxViewHome', { appId: $scope.appId, request: requestId, returnUrl: location.href });
+        ui.navigate('kpsystem', 'reports/adxViewHome', { appId: $scope.appId, request: requestId, returnUrl: location.href });
     };
 
 	var defaultSuccessHandler = function(data) {

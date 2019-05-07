@@ -69,7 +69,7 @@ public class AdxReportRenderer extends ReportDesignRenderer {
         administrationService = Context.getAdministrationService();
         locationService = Context.getLocationService();
 
-        Integer locationId = Integer.parseInt(administrationService.getGlobalProperty("kenyaemr.defaultLocation"));
+        Integer locationId = Integer.parseInt(administrationService.getGlobalProperty("kpsystem.defaultLocation"));
         Location location = locationService.getLocation(locationId);
         String mfl = "Unknown";
         if (location != null) {
